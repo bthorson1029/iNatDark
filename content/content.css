@@ -328,7 +328,7 @@ html.inat-dark #inatnotice {
 }
 
 html.inat-dark #main-tabs.nav-tabs>li.curation-tab {
-    align-self: first baseline !important;
+    align-self: flex-start !important;
     margin-top: -0.25rem !important;
 }
 
@@ -1068,7 +1068,7 @@ html.inat-dark #ObservationShow .nav-tabs>li>a:hover {
 html.inat-dark .nav.nav-tabs {
     display: flex !important;
     background-color: rgba(0, 0, 0, 0) !important;
-    align-items: self-end !important;
+    align-items: flex-end !important;
 }
 
 html.inat-dark span.userlink a {
@@ -1326,8 +1326,8 @@ html.inat-dark .updates .heading {
     /* padding: var(--space-3) var(--space-4) !important; */
 }
 
-/* 3) Vertical timeline spine & markers
-   iNat/Bootstrap variants use ::before spines, or a .line/.spine element, and badges. */
+/* 3) Vertical timeline spine & markers */
+/* iNat/Bootstrap variants use ::before spines, or a .line/.spine element, and badges. */
 html.inat-dark .timeline::before,
 html.inat-dark .Timeline::before,
 html.inat-dark .updates::before,
