@@ -24,8 +24,8 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 
 ## Usage
 - Visit `https://www.inaturalist.org/`.
-- Use the floating toggle (bottom-right by default). Drag it to your preferred position; per-origin position is saved.
-- Open the toolbar popup to change **Mode** (System/Dark/Light), **Dark Map UI** (controls only), and default **Corner**.
+- Toggle the plugin menu in the browser toolbar.
+- Open the toolbar popup to change **Mode** (System/Light/Dark)
 
 
 ## Design & Accessibility
@@ -49,7 +49,6 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 
 ## Known Limitations
 - If iNat ships structural CSS changes, some selectors may need updates.
-- Dark map *tiles* are not toggled (only control chrome). If iNat exposes a tile-style switch, wire it in `content.js`.
 
 
 ## Packaging
