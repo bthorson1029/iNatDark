@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iNat Dark Mode</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+    <div class="logo">
+        <svg id="popup-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320.18 57.91">
+            <defs>
+            <style>
+                .uuid-a424a6e0-c12d-47ac-96d5-a7262a974a48{fill:#fff;}
+                .uuid-851d6930-0dd0-4f32-b4ed-351e82811b68{fill:#74ac00;}
+            </style>
+            </defs>
+            <path class="uuid-851d6930-0dd0-4f32-b4ed-351e82811b68" d="M.12,15.44h12.13v41.84H.12V15.44ZM12.38,6.19c0-3.42-2.77-6.19-6.19-6.19S0,2.77,0,6.19s2.77,6.19,6.19,6.19,6.19-2.77,6.19-6.19Z"/>
+            <path class="uuid-a424a6e0-c12d-47ac-96d5-a7262a974a48" d="M70.07,2.84v54.44h-10.34l-27.14-33.06v33.06h-12.44V2.84h10.42l27.07,33.06V2.84h12.44Z"/>
+            <path class="uuid-a424a6e0-c12d-47ac-96d5-a7262a974a48" d="M117.21,33.41v23.88h-11.35v-5.21c-2.26,3.81-6.61,5.83-12.76,5.83-9.8,0-15.63-5.44-15.63-12.68s5.21-12.52,17.97-12.52h9.64c0-5.21-3.11-8.24-9.64-8.24-4.43,0-9.02,1.48-12.06,3.89l-4.35-8.48c4.59-3.27,11.35-5.06,18.04-5.06,12.76,0,20.14,5.91,20.14,18.59ZM105.08,44.06v-4.28h-8.32c-5.68,0-7.47,2.1-7.47,4.9,0,3.03,2.57,5.06,6.84,5.06,4.05,0,7.55-1.87,8.94-5.68Z"/>
+            <path class="uuid-a424a6e0-c12d-47ac-96d5-a7262a974a48" d="M153.14,55.26c-2.49,1.79-6.14,2.64-9.88,2.64-9.88,0-15.63-5.06-15.63-15.01v-17.19h-6.46v-9.33h6.46V6.19h12.13v10.19h10.42v9.33h-10.42v17.03c0,3.58,1.94,5.52,5.21,5.52,1.79,0,3.58-.54,4.9-1.56l3.27,8.56Z"/>
+            <path class="uuid-851d6930-0dd0-4f32-b4ed-351e82811b68" d="M172.37,2.84h-16.05c17.7,0,29.85,10.67,29.85,27.07s-12.14,27.07-29.85,27.07h16.05c17.72,0,29.86-10.67,29.86-27.07s-12.14-27.07-29.86-27.07Z"/>
+            <path class="uuid-851d6930-0dd0-4f32-b4ed-351e82811b68" d="M241.13,34.46v22.51h-10.7v-4.91c-2.13,3.59-6.23,5.5-12.02,5.5-9.24,0-14.74-5.13-14.74-11.95s4.91-11.81,16.94-11.81h9.09c0-4.91-2.93-7.77-9.09-7.77-4.18,0-8.51,1.39-11.36,3.67l-4.11-7.99c4.33-3.08,10.71-4.77,17.01-4.77,12.02,0,18.99,5.57,18.99,17.52ZM229.7,44.51v-4.03h-7.84c-5.35,0-7.04,1.98-7.04,4.62,0,2.86,2.42,4.77,6.45,4.77,3.81,0,7.11-1.76,8.43-5.35Z"/>
+            <path class="uuid-851d6930-0dd0-4f32-b4ed-351e82811b68" d="M271.56,16.94v10.56c-.95-.07-1.69-.15-2.57-.15-6.31,0-10.49,3.45-10.49,11v18.62h-11.44V17.53h10.92v5.21c2.79-3.81,7.48-5.79,13.56-5.79Z"/>
+            <path class="uuid-851d6930-0dd0-4f32-b4ed-351e82811b68" d="M293.85,41.5l-5.5,5.43v10.04h-11.44V2.57h11.44v30.79l16.72-15.84h13.64l-16.42,16.72,17.89,22.73h-13.86l-12.47-15.47Z"/>
+        </svg>
+    </div>
+    <label id="mode-label">Choose theme</label>
+
+    <div class="segmented" role="radiogroup" aria-labelledby="mode-label">
+        <input type="radio" id="opt-system" name="mode" value="system" />
+        <label for="opt-system">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 18" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path
+                    d="M3,15c-.55,0-1.02-.2-1.41-.59-.39-.39-.59-.86-.59-1.41V2c0-.55.2-1.02.59-1.41s.86-.59,1.41-.59h16c.55,0,1.02.2,1.41.59s.59.86.59,1.41v11c0,.55-.2,1.02-.59,1.41-.39.39-.86.59-1.41.59H3ZM0,18v-2h22v2H0Z" />
+            </svg>
+            System
+        </label>
+
+        <input type="radio" id="opt-light" name="mode" value="light" />
+        <label for="opt-light">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path
+                    d="M11,16c-1.38,0-2.56-.49-3.54-1.46s-1.46-2.15-1.46-3.54.49-2.56,1.46-3.54,2.15-1.46,3.54-1.46,2.56.49,3.54,1.46,1.46,2.15,1.46,3.54-.49,2.56-1.46,3.54-2.15,1.46-3.54,1.46ZM4,12H0v-2h4v2ZM22,12h-4v-2h4v2ZM10,4V0h2v4h-2ZM10,22v-4h2v4h-2ZM5.4,6.75l-2.53-2.43,1.43-1.48,2.4,2.5-1.3,1.4ZM17.7,19.15l-2.43-2.53,1.33-1.38,2.53,2.43-1.43,1.48ZM15.25,5.4l2.43-2.53,1.48,1.43-2.5,2.4-1.4-1.3ZM2.85,17.7l2.53-2.43,1.38,1.33-2.43,2.53-1.48-1.43Z" />
+            </svg>
+            Light
+        </label>
+
+        <input type="radio" id="opt-dark" name="mode" value="dark" />
+        <label for="opt-dark">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path
+                    d="M9,18c-2.5,0-4.63-.88-6.38-2.63S0,11.5,0,9,.88,4.38,2.63,2.63,6.5,0,9,0c.23,0,.46,0,.69.03s.45.04.66.08c-.68.48-1.23,1.11-1.64,1.89s-.61,1.61-.61,2.51c0,1.5.53,2.78,1.58,3.83s2.33,1.58,3.83,1.58c.92,0,1.76-.2,2.53-.61s1.39-.95,1.88-1.64c.03.22.06.44.08.66s.03.45.03.69c0,2.5-.88,4.63-2.63,6.38s-3.88,2.63-6.38,2.63Z" />
+            </svg>
+            Dark
+        </label>
+    </div>
+
+    <div class="support">
+        <button id="donate" class="ghost" type="button" aria-label="Support development (opens in a new tab)">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path
+                    d="M10 18s-6.716-4.308-8.944-7.04C-.656 8.19.18 5.18 2.784 3.9 4.2 3.19 6.02 3.398 7.2 4.48L10 7l2.8-2.52c1.18-1.082 3-1.29 4.416-.58 2.604 1.28 3.44 4.29 1.728 7.06C16.716 13.692 10 18 10 18z" />
+            </svg>
+            Support development
+        </button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

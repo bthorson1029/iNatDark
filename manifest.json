@@ -1,0 +1,66 @@
+{
+    "manifest_version": 3,
+    "name": "Dark Mode for iNaturalist",
+    "version": "1.0.0",
+    "description": "Adds a persistent, accessible dark mode to iNaturalist.",
+    "icons": {
+        "16": "assets/icons/iNat-Dark-favicon-16x16.png",
+        "32": "assets/icons/iNat-Dark-favicon-32x32.png",
+        "48": "assets/icons/iNat-Dark-favicon-48x48.png",
+        "128": "assets/icons/iNat-Dark-favicon-128x128.png",
+        "256": "assets/icons/iNat-Dark-favicon-256x256.png"
+    },
+    "action": {
+        "default_title": "iNat Dark",
+        "default_popup": "ui/popup.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://www.inaturalist.org/*",
+        "https://inaturalist.org/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.inaturalist.org/*",
+                "https://inaturalist.org/*"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "common/storage.js",
+                "common/dom.js",
+                "common/theme.js",
+                "content/content.js"
+            ],
+            "css": [
+                "content/reset.css",
+                "content/content.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "content/icons.svg",
+                "assets/icons/*.png",
+                "assets/*.svg"
+            ],
+            "matches": [
+                "https://www.inaturalist.org/*",
+                "https://inaturalist.org/*"
+            ]
+        }
+    ],
+    "options_ui": {
+        "page": "ui/options.html",
+        "open_in_tab": true
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "inat-dark@example.com",
+            "strict_min_version": "109.0"
+        }
+    }
+}

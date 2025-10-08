@@ -1,0 +1,1501 @@
+/* Core variables + component overrides (scoped under html.inat-dark) */
+html.inat-dark {
+    --bg: #0e0f12;
+    --text: #e6e6e6;
+    --muted: #a3a3a3;
+    --card: #16181d;
+    --border: #2a2d34;
+    --link: #7fa8f0;
+    --link-visited: #c3a6ff;
+    --brand-green: #9cd24a;
+    --focus: #94c2ff;
+    --shadow: rgba(0, 0, 0, .5);
+}
+
+html.inat-dark *:focus {
+    outline: 2px solid var(--brand-green) !important;
+    outline-offset: 2px !important;
+
+}
+
+html.inat-dark body,
+html.inat-dark .mainrow .main-col,
+#ObservationShow .data_quality_assessment,
+#ObservationShow .more_from,
+#wrapper>.container,
+#wrapper>.container .col-sm-8 {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark a {
+    color: var(--link);
+}
+
+html.inat-dark a:visited {
+    color: var(--link-visited);
+}
+
+
+/* Buttons / inputs */
+html.inat-dark button,
+html.inat-dark a.button,
+html.inat-dark .btn,
+html.inat-dark input,
+html.inat-dark select,
+html.inat-dark textarea,
+html.inat-dark .MoreFromUser .obs {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+html.inat-dark .btn-primary,
+html.inat-dark button.primary,
+html.inat-dark .panel a.btn.btn-primary {
+    background: var(--brand-green) !important;
+    color: #0b0b0b !important;
+    border-color: transparent !important;
+}
+
+html.inat-dark #subview-controls .btn.btn-default.active {
+    border-bottom: var(--brand-green) 1px solid !important;
+}
+html.inat-dark #subview-controls .btn.btn-default.active > span.glyphicon {
+    color: var(--brand-green) !important;
+}
+
+/* Navbars, dropdowns, modals */
+html.inat-dark .Navbar,
+html.inat-dark header,
+html.inat-dark .nav,
+html.inat-dark .modal-content,
+.bootstrap .identification {
+    background: var(--card) !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark #header #usernav .hasupdates,
+html.inat-dark #header #usernav #messagesnav.hasupdates,
+html.inat-dark #header #usernav .hasupdates i.fa,
+html.inat-dark #header #usernav .hasmessages i.fa{
+    color: #d42b2b !important;
+}
+
+html.inat-dark .ui-autocomplete .ac-result .ac-label,
+.ui-autocomplete .category .ac-label {
+    color: var(--text) !important;
+}
+
+html.inat-dark .ui-autocomplete .ui-state-focus {
+    background: var(--card) !important;
+}
+
+html.inat-dark .ui-autocomplete a.ac-view {
+    color: var(--text) !important;
+}
+
+html.inat-dark .ui-autocomplete .ui-state-focus a.ac-view {
+    color: var(--link) !important;
+}
+
+html.inat-dark .ui-autocomplete li.ac-result + li.ac-result,
+html.inat-dark .ui-autocomplete .nearby-toggle {
+    border-top: 1px solid var(--border) !important;
+}
+
+
+html.inat-dark .ui-autocomplete .category.header-category.non-option {
+    background-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark .ui-widget-content.ac-menu,
+html.inat-dark .ui-widget-content.ui-autocomplete .nearby-toggle button {
+    background: var(--bg) !important;
+}
+
+html.inat-dark .ui-widget-content.ac-menu {
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .ui-autocomplete .ac-view {
+    background: none !important;
+}
+
+html.inat-dark #header i.fa {
+    color: #74ac00 !important;
+}
+
+html.inat-dark span.count,
+html.inat-dark #subscriptions .list-group a {
+    color: var(--text) !important;
+}
+
+/* pagination */
+
+html.inat-dark .bootstrap .pagination > li:first-child > a {
+    background-color: var(--card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .pagination a {
+    color: var(--text) !important;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+html.inat-dark .bootstrap .pagination > .active > a {
+    background-color: var(--brand-green) !important;
+    border-color: var(--brand-green) !important;
+    color: var(--bg) !important;
+}
+html.inat-dark .bootstrap .pagination > .active > a:hover {
+    background-color: var(--brand-green) !important;
+    border-color: var(--brand-green) !important;
+    color: var(--bg) !important;
+}
+html.inat-dark .bootstrap .pagination > li > a:hover {
+    background-color: var(--card) !important;
+    border: 1px solid var(--brand-green) !important;
+}
+
+html.inat-dark .pagination em.current {
+    color: #74ac00 !important;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+html.inat-dark .col-md-3.col-sm-3 .media,
+html.inat-dark .col-md-3.col-sm-3 .media-body {
+    background: none !important;
+}
+
+html.inat-dark .media .media-body>i.fa {
+    color: #74ac00 !important;
+}
+
+/* Calendar */
+html.inat-dark .calendar .daylink {
+    background-color: #74ac00 !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark .dropdown-menu {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+html.inat-dark .dropdown-item {
+    color: var(--text);
+}
+
+html.inat-dark .dropdown-item:hover {
+    background: #1e2127;
+}
+
+
+/* Cards, tables */
+html.inat-dark .card,
+html.inat-dark .panel,
+html.inat-dark .observations-grid .observation,
+html.inat-dark table {
+    background: var(--card) !important;
+    color: var(--text);
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .bootstrap .table > tbody > tr > td {
+    border: none !important;
+}
+
+html.inat-dark table tr:nth-child(even) {
+    background-color: #1b1e24 !important;
+}
+
+html.inat-dark .sortable-table td.sorting {
+    background-color: unset !important;
+}
+
+html.inat-dark .split-taxon .noname.display-name {
+    color: var(--muted) !important;
+}
+
+html.inat-dark .row .media {
+    padding: 1rem !important;
+}
+html.inat-dark .row .media:nth-child(odd) {
+    background: var(--card) !important;
+}
+html.inat-dark .row .media:first-child {
+    margin-top: 1rem !important;
+}
+
+html.inat-dark .row .timeline-body .media:first-child {
+    margin-top: 0 !important;
+}
+
+html.inat-dark table tr:hover {
+    background: #22262e;
+}
+
+html.inat-dark #projectnav li:hover {
+    background-color: var(--card) !important;
+}
+
+html.inat-dark ul.timeline_observation > li:last-child > .timeline-panel > .timeline-body {
+    padding: 1rem !important;
+}
+
+html.inat-dark .timeline>li>.timeline-panel>.timeline-body span.identifications {
+    color: var(--muted) !important;
+}
+
+html.inat-dark .media-body > ul > li {
+    color: var(--text) !important;
+}
+
+html.inat-dark ul.timeline_observation > li > .timeline-panel > .timeline-heading > h2.timeline-title span {
+    color: var(--text) !important;
+}
+
+html.inat-dark #forum .pull-right i.fa {
+    color: var(--text) !important;
+}
+
+html.inat-dark #filter-container > button.btn-default .badge {
+    background-color: var(--brand-green) !important;
+    color: var(--bg) !important;
+}
+
+html.inat-dark #filters .primary-filters > button {
+    background-color: #f16f3a !important;
+}
+
+
+
+
+/* Activity Panel */
+html.inat-dark .activity>.ActivityItem.identification,
+html.inat-dark .activity .improving.panel.panel-default,
+html.inat-dark .activity .comment.by-someone-else,
+html.inat-dark .activity .undefined.panel.panel-default,
+html.inat-dark .activity .comment.by-current-user,
+html.inat-dark .taxon_change ul.change_taxon,
+html.inat-dark .taxon_change ul.change_taxon li {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+html.inat-dark .activity .comment.by-someone-else,
+html.inat-dark .activity .comment.by-current-user {
+    border: none !important;
+}
+
+html.inat-dark .activity .UserText .content {
+    background: none !important;
+}
+
+html.inat-dark #ObservationShow .top_row .photos_column .PhotoBrowser .image-gallery-thumbnails-wrapper .image-gallery-thumbnails {
+    background: var(--bg) !important;
+}
+
+html.inat-dark .Map {
+    border-color: var(--border) !important;
+}
+
+html.inat-dark #ObservationShow .top_row .info_column .user_info,
+html.inat-dark .TaxonomicBranch .taxonomy li.tabular.has-children li.current.has-children .row-content>* {
+    border-bottom: 1px solid var(--border) !important;
+}
+
+html.inat-dark #ObservationShow .top_row .info_column,
+html.inat-dark #ObservationShow .top_row .photos_column {
+    border: none !important;
+}
+
+html.inat-dark .QualityMetrics>.panel.panel-default {
+    border: none !important;
+    background-color: var(--bg) !important;
+}
+
+html.inat-dark #ObservationShow .data_quality_assessment,
+html.inat-dark #ObservationShow .more_from {
+    border-top: 1px solid var(--border) !important;
+}
+
+html.inat-dark #inatnotice {
+    background-color: var(--bg) !important;
+}
+
+html.inat-dark #main-tabs.nav-tabs>li.curation-tab {
+    align-self: first baseline !important;
+    margin-top: -0.25rem !important;
+}
+
+html.inat-dark .timeline>li>.timeline-panel {
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .timeline>li>.timeline-panel::before {
+    position: absolute;
+    top: 11px;
+    right: -16px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-left: 10px solid var(--border);
+    border-left-width: 10px;
+    border-right: 0 solid var(--border);
+    border-right-width: 0px;
+    border-bottom: 10px solid transparent;
+    content: " ";
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+
+html.inat-dark .timeline>li>.timeline-panel::after {
+    position: absolute;
+    top: 12px;
+    right: -15px;
+    display: inline-block;
+    border-top: 9px solid transparent;
+    border-left: 9px solid var(--border);
+    border-left-width: 9px;
+    border-right: 0 solid var(--border);
+    border-right-width: 0px;
+    border-bottom: 9px solid transparent;
+    content: " ";
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+
+html.inat-dark ul.timeline_observation > li > .timeline-panel > .timeline-heading {
+    padding-right: 1rem !important;
+}
+
+html.inat-dark .timeline>li>.timeline-panel>.timeline-body .media-body > ul > li:last-child {
+    margin-left: -3px !important;
+}
+
+
+
+html.inat-dark .QualityMetrics tr.improve {
+    background-color: var(--card) !important;
+}
+
+html.inat-dark #rtstats .counts {
+    background-color: var(--card) !important;
+}
+
+html.inat-dark #rtstats .counts > label,
+html.inat-dark #rtstats .most_observations > label,
+html.inat-dark #rtstats .most_species > label,
+html.inat-dark #rtstats .most_observed > label,
+html.inat-dark #rtstats .counts .label {
+    color: var(--text) !important;
+}
+
+html.inat-dark #projectstats .user user-login a, 
+html.inat-dark #projectstats .taxon > a  {
+    color: var(--link) !important;
+}
+/* Leaderboard names (were too dim) */
+html.inat-dark .LeaderItem .name a {
+    color: var(--link) !important;
+}
+
+html.inat-dark .Leaders>.LeaderItem.media>.media-left,
+html.inat-dark .Leaders>.LeaderItem.media>.media-body {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+html.inat-dark .LeaderItem .item-label,
+html.inat-dark .LeaderItem .value {
+    color: var(--text) !important;
+}
+
+
+/* Comments, code blocks, quotes */
+html.inat-dark pre,
+html.inat-dark code {
+    background: #0e0f12;
+    border: 1px solid var(--border);
+    color: #d1d5db;
+}
+
+html.inat-dark blockquote {
+    border-left: 4px solid var(--border);
+    color: var(--muted);
+}
+
+
+/* Focus ring */
+html.inat-dark :focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+
+/* Images, avatars, maps: never invert */
+html.inat-dark img,
+html.inat-dark video,
+html.inat-dark .map,
+html.inat-dark canvas {
+    filter: none !important;
+}
+
+
+/* Map UI (optional dark controls) */
+html.inat-dark .leaflet-control,
+html.inat-dark .mapboxgl-ctrl,
+html.inat-dark .leaflet-popup-content-wrapper {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .leaflet-bar a,
+html.inat-dark .leaflet-popup-tip {
+    background: var(--card) !important;
+    color: var(--text) !important;
+}
+
+
+/* Toggle button */
+#inat-dark-toggle {
+    position: fixed;
+    z-index: 999999;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px var(--shadow);
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    outline: none;
+}
+
+#inat-dark-toggle:hover {
+    filter: brightness(1.05);
+}
+
+#inat-dark-toggle:active {
+    transform: translateY(1px);
+}
+
+#inat-dark-toggle svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+#inat-dark-toggle .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* Corner snapping helpers (fallback if dragging disabled) */
+#inat-dark-toggle.corner-bottom-right {
+    right: 16px;
+    bottom: 16px;
+}
+
+#inat-dark-toggle.corner-bottom-left {
+    left: 16px;
+    bottom: 16px;
+}
+
+#inat-dark-toggle.corner-top-right {
+    right: 16px;
+    top: 16px;
+}
+
+#inat-dark-toggle.corner-top-left {
+    left: 16px;
+    top: 16px;
+}
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* --- DARK PATCH v1: widen coverage + contrast --- */
+html.inat-dark {
+    /* Make native controls dark (selects, inputs, scrollbars) */
+    color-scheme: dark;
+}
+
+/* Stronger base contrast for common text tokens */
+html.inat-dark h1,
+html.inat-dark h2,
+html.inat-dark h3,
+html.inat-dark h4,
+html.inat-dark h5,
+html.inat-dark h6 {
+    color: var(--text);
+}
+
+html.inat-dark .text-muted,
+/* bootstrap-ish */
+html.inat-dark .muted,
+/* generic */
+html.inat-dark .help-block,
+/* form help */
+html.inat-dark .small,
+html.inat-dark small {
+    color: #bfbfbf !important;
+    /* raise contrast */
+}
+
+/* Global containers & common “light” surfaces */
+html.inat-dark .container,
+html.inat-dark .content,
+html.inat-dark main,
+html.inat-dark .page,
+html.inat-dark .well,
+/* bootstrap well */
+html.inat-dark .box,
+/* generic boxes */
+html.inat-dark .sidebar,
+html.inat-dark footer,
+html.inat-dark #results,
+html.inat-dark #ObservationShow,
+html.inat-dark #bodywrapper,
+html.inat-dark #ObservationShow .top_row,
+html.inat-dark #ObservationShow .image-gallery-image,
+html.inat-dark #carousel-container,
+html.inat-dark #main-container {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark #hero,
+html.inat-dark #hero .container,
+html.inat-dark #stats-container,
+html.inat-dark #stats-container>.container {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark #charts .tab-content {
+    background-color: var(--bg) !important;
+}
+
+/* Timeline/feed cards, generic cards & panels */
+html.inat-dark .card,
+html.inat-dark .panel,
+html.inat-dark .panel-default,
+html.inat-dark .panel-body,
+html.inat-dark .panel-heading,
+html.inat-dark .panel-footer,
+html.inat-dark .media.for_idents,
+/* html.inat-dark .media-body, */
+/* html.inat-dark .activity, */
+/* activity feed items */
+html.inat-dark .comment,
+html.inat-dark .reply,
+html.inat-dark .thread,
+html.inat-dark .obs-card,
+html.inat-dark .observation-card,
+html.inat-dark .Observation,
+html.inat-dark .ObservationField,
+html.inat-dark .Identification {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Headings/strips inside cards */
+html.inat-dark .panel-heading,
+html.inat-dark .card-header,
+html.inat-dark .list-group-item {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Tab bars / pills / filters */
+html.inat-dark .nav-tabs,
+html.inat-dark .tabs,
+html.inat-dark .tab-bar,
+html.inat-dark .pill,
+html.inat-dark .chip,
+html.inat-dark .badge,
+html.inat-dark .filter-pill,
+html.inat-dark .search-pill {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark a.inline-block.label.label-default {
+    background: unset !important;
+    color: var(--text) !important;
+    opacity: 1.0 !important;
+}
+
+#forum .list-group-item .title .label-default {
+    opacity: 0.8 !important;
+}
+
+html.inat-dark .panel.panel-default {
+    padding: 0 !important;
+}
+
+html.inat-dark .ui-tooltip-light .ui-tooltip-content,
+html.inat-dark #tools-container,
+html.inat-dark #tools-container .container {
+    background-color: var(--card) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .nav-tabs>li>a,
+html.inat-dark .tabs a {
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .nav-tabs>li.active>a,
+html.inat-dark .nav-tabs>li>a:hover,
+html.inat-dark .tabs .active a {
+    background: #1e2127 !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark #charts.Charts>ul>li>a {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Buttons (more variants) */
+html.inat-dark .btn-default,
+html.inat-dark .btn-secondary {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .btn-default.dashboard_tab.active {
+    border-bottom: var(--brand-green) 1px solid !important;
+}
+
+html.inat-dark .btn-default.dashboard_tab:focus,
+html.inat-dark .btn-default.dashboard_tab.active:focus {
+    outline: 2px solid var(--brand-green) !important;
+    outline-offset: 2px !important;
+}
+
+html.inat-dark .btn-success,
+html.inat-dark .btn-primary {
+    background: var(--brand-green) !important;
+    color: #0b0b0b !important;
+    border-color: transparent !important;
+}
+
+html.inat-dark .btn-link {
+    color: var(--link) !important;
+}
+
+/* Forms */
+html.inat-dark input[type="text"],
+html.inat-dark input[type="search"],
+html.inat-dark input[type="email"],
+html.inat-dark input[type="number"],
+html.inat-dark input[type="password"],
+html.inat-dark textarea,
+html.inat-dark select {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark input::placeholder,
+html.inat-dark textarea::placeholder {
+    color: #9aa0a6 !important;
+}
+
+/* Dropdowns, popovers, tooltips, toasts */
+html.inat-dark .dropdown-menu,
+html.inat-dark .popover,
+html.inat-dark .popover-content,
+html.inat-dark .tooltip-inner,
+html.inat-dark .toast {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .tooltip .tooltip-arrow {
+    border-top-color: var(--card) !important;
+}
+
+/* Modals and backdrops */
+html.inat-dark .modal-content {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .modal-header,
+html.inat-dark .modal-footer {
+    background: #1a1c21 !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .modal-backdrop {
+    background: #000 !important;
+    opacity: .6 !important;
+}
+
+/* Tables (forum, lists, messages) */
+html.inat-dark table {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark thead,
+html.inat-dark th {
+    background: #1b1e24 !important;
+}
+
+html.inat-dark tbody tr {
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .table-striped>tbody>tr:nth-child(odd) {
+    background: #171a1f !important;
+}
+
+
+/* Links in cards/forums that were too dim */
+/* html.inat-dark .panel a, */
+html.inat-dark .card a,
+html.inat-dark .thread a,
+html.inat-dark .comment a,
+html.inat-dark .activity a {
+    color: var(--link) !important;
+}
+
+
+/* Alerts/labels/messages */
+html.inat-dark .alert,
+html.inat-dark .notice,
+html.inat-dark .callout {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* HR separators */
+html.inat-dark hr {
+    border: 0;
+    border-top: 1px solid var(--border) !important;
+}
+
+/* Forum sidebar widgets */
+html.inat-dark .widget,
+html.inat-dark .sidebar .panel,
+html.inat-dark .sidebar .card {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Ensure icons/svgs that rely on currentColor remain visible */
+html.inat-dark svg {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+/* --- DARK PATCH v2: spacing + density + final contrast --- */
+
+/* A. Spacing tokens (use these everywhere below) */
+html.inat-dark {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+}
+
+/* B. Card/Panel shells */
+html.inat-dark .card,
+html.inat-dark .panel,
+html.inat-dark .panel-default,
+html.inat-dark .obs-card,
+html.inat-dark .observation-card,
+html.inat-dark .Identification,
+html.inat-dark .activity,
+html.inat-dark .comment,
+html.inat-dark .reply,
+html.inat-dark .thread,
+html.inat-dark .CommunityIdentification .info {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+#ObservationShow .top_row .info_column {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+html.inat-dark #ObservationShow .top_row .info_column .UserWithIcon .title a {
+    color: var(--text) !important;
+}
+
+
+
+html.inat-dark #projects-panel .panel,
+html.inat-dark .opposite_activity .panel.panel-default {
+    padding: 1rem !important;
+}
+
+html.inat-dark #ObservationShow .comment_id_panel .tab-content {
+    background-color: var(--bg) !important;
+}
+
+html.inat-dark #ObservationShow .activity {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+}
+
+html.inat-dark .Activity .activity:before {
+    border-inline-start: 4px solid var(--border) !important;
+}
+
+html.inat-dark .Activity .UserImage {
+    border: 4px solid var(--border) !important;
+}
+
+html.inat-dark #ObservationShow .Activity .ActivityItemMenu {
+    border: none !important;
+}
+
+html.inat-dark #ObservationShow #comment-id-tabs .nav.nav-tabs {
+    display: block !important;
+}
+
+
+/* D. Headers/footers of cards/panels */
+html.inat-dark .panel-heading,
+html.inat-dark .card-header {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+html.inat-dark .ActivityItem .panel-body .contents {
+    border-radius: 6px !important;
+}
+
+html.inat-dark #ObservationShow .comment_id_panel {
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .panel-footer,
+html.inat-dark .card-footer {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border-top: 1px solid var(--border) !important;
+    padding: var(--space-3) var(--space-4) !important;
+}
+
+/* E. Buttons never flush against edges */
+html.inat-dark .panel .btn,
+html.inat-dark .card .btn,
+html.inat-dark .Identification .btn,
+html.inat-dark .activity .btn,
+html.inat-dark .comment .btn,
+html.inat-dark .reply .btn {
+    margin: 0 var(--space-2) var(--space-2) 0 !important;
+}
+
+html.inat-dark .btn-sm {
+    padding: 4px 8px !important;
+}
+
+html.inat-dark .btn-primary {
+    font-weight: 700 !important;
+}
+
+html.inat-dark .TaxonThumbnail .taxon .secondary-name,
+html.inat-dark span.rank,
+html.inat-dark span.othernames span.comname {
+    color: var(--text) !important;
+}
+
+html.inat-dark .dropdown-menu>li>a {
+    color: var(--text) !important;
+}
+
+html.inat-dark .dropdown-menu>li>a:hover,
+html.inat-dark .dropdown-menu>li>a:focus {
+    background: var(--card) !important;
+}
+
+html.inat-dark .dropdown-menu>li>a:focus {
+    outline: 2px solid var(--brand-green) !important;
+    outline-offset: 2px !important;
+}
+
+html.inat-dark .table .changes td.change {
+    background-color: var(--card) !important;
+}
+
+/* html.inat-dark .TaxonThumbnail .badge.with-tip {
+    background-color: var(--brand-green) !important;
+}
+
+html.inat-dark .TaxonThumbnail .badge.with-tip > a {
+    color: var(--card) !important;
+} */
+
+html.inat-dark .quality_grade.research {
+    color: var(--bg) !important;
+    font-weight: 700 !important;
+}
+
+html.inat-dark .CommunityIdentification .action {
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark #ObservationShow a.secondary-name {
+    color: var(--text) !important;
+}
+
+
+/* If buttons live in an actions row/footer, give the row padding */
+html.inat-dark .actions,
+html.inat-dark .button-row,
+html.inat-dark .controls {
+    padding-top: var(--space-2);
+}
+
+/* F. List items and zebra tables: readable density */
+html.inat-dark .list-group-item,
+html.inat-dark li.list-group-item {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+    /* padding: var(--space-3) var(--space-4) !important; */
+}
+
+html.inat-dark table thead th {
+    background: #1b1e24 !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark .table-striped>tbody>tr:nth-child(odd) {
+    background: #171a1f !important;
+}
+
+/* G. Tabs/pills/filters: keep height + spacing consistent */
+html.inat-dark .nav-tabs>li>a,
+html.inat-dark .tabs a,
+html.inat-dark .pill,
+html.inat-dark .filter-pill,
+html.inat-dark .badge,
+html.inat-dark .label {
+    /* padding: 6px 10px !important; */
+    line-height: 1.2 !important;
+    border-color: var(--border) !important;
+}
+
+/* html.inat-dark .nav-tabs>li>a {
+    padding: 20px 30px 16px !important;
+} */
+
+html.inat-dark .nav-tabs>li.active>a,
+html.inat-dark .tabs .active a {
+    background: #1e2127 !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark .TaxonPageTabs #main-tabs {
+    background-color: var(--bg) !important;
+}
+
+html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
+    padding: 20px 30px 16px !important;
+}
+
+html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a,
+.TaxonPageTabs .nav-tabs>li>a:hover,
+.TaxonPageTabs .nav-tabs>li>a:focus,
+.TaxonPageTabs .nav-tabs>li.active>a:hover,
+.TaxonPageTabs .nav-tabs>li.active>a:focus,
+html.inat-dark #charts.Charts>ul>li.active>a,
+html.inat-dark #charts.Charts>ul>li>a:hover,
+html.inat-dark #charts.Charts>ul>li>a:focus,
+html.inat-dark .nav-tabs.user-subnav>li.active>a,
+html.inat-dark .nav-tabs.user-subnav>li>a:hover,
+html.inat-dark #ObservationShow .nav-tabs>li.active>a,
+html.inat-dark #ObservationShow .nav-tabs>li>a:hover {
+    border-bottom: 3px solid #74ac00 !important;
+}
+
+html.inat-dark .nav.nav-tabs {
+    display: flex !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    align-items: self-end !important;
+}
+
+html.inat-dark span.userlink a {
+    color: var(--text) !important;
+}
+
+html.inat-dark .nav.nav-tabs.user-subnav>li.active,
+html.inat-dark .nav.nav-tabs.user-subnav>li,
+html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a,
+html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
+    height: 100% !important;
+    align-items: stretch !important;
+    border: none !important;
+}
+
+html.inat-dark #charts.Charts>ul>li>a:focus,
+.TaxonPageTabs .nav-tabs>li.active>a:focus,
+.TaxonPageTabs .nav-tabs>li>a:focus,
+html.inat-dark .nav-tabs.user-subnav>li>a:focus {
+    outline: 2px solid #74ac00 !important;
+    outline-offset: 2px !important;
+    background-color: var(--card) !important;
+}
+
+/* H. “Muted” and secondary text: bump contrast */
+html.inat-dark .text-muted,
+html.inat-dark .muted,
+html.inat-dark .help-block,
+html.inat-dark .meta,
+html.inat-dark .timestamp {
+    color: #c4c4c6 !important;
+}
+
+/* I. Inputs: keep padding + placeholder contrast */
+html.inat-dark input[type="text"],
+html.inat-dark input[type="search"],
+html.inat-dark input[type="email"],
+html.inat-dark input[type="number"],
+html.inat-dark input[type="password"],
+html.inat-dark textarea,
+html.inat-dark select {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    padding: 6px 10px !important;
+}
+
+html.inat-dark input::placeholder,
+html.inat-dark textarea::placeholder {
+    color: #a6abb3 !important;
+}
+
+/* J. Tooltips/popovers/dropdowns keep padding and edge separation */
+html.inat-dark .dropdown-menu,
+html.inat-dark .popover,
+html.inat-dark .tooltip-inner {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    padding: var(--space-3) !important;
+}
+
+/* K. Prevent layout shift: borders match original 1px thickness */
+html.inat-dark .panel,
+html.inat-dark .card,
+html.inat-dark .dropdown-menu,
+html.inat-dark .modal-content,
+html.inat-dark .popover,
+html.inat-dark table,
+html.inat-dark .list-group-item {
+    border-width: 1px !important;
+}
+
+/* --- DARK PATCH v3: top nav + timeline + thumbnails --- */
+
+/* 1) Top navigation/header bar */
+html.inat-dark .navbar,
+html.inat-dark .navbar-default,
+html.inat-dark .navbar-static-top,
+html.inat-dark .navbar-fixed-top,
+html.inat-dark header.site-header,
+html.inat-dark .Header,
+html.inat-dark header#header,
+html.inat-dark .topnav {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+/* Ensure container inside footer also matches */
+html.inat-dark #footer,
+html.inat-dark #footer>.container {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+html.inat-dark #footer a {
+    color: var(--text) !important;
+}
+
+/* Search field inside the header */
+html.inat-dark .navbar input[type="search"],
+html.inat-dark .navbar .form-control,
+html.inat-dark header.site-header input[type="search"] {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark .navbar input::placeholder,
+html.inat-dark header.site-header input::placeholder {
+    color: #9aa0a6 !important;
+}
+
+/* Nav links / dropdowns in the header */
+html.inat-dark .navbar a,
+html.inat-dark header.site-header a {
+    color: var(--text) !important;
+}
+
+html.inat-dark .navbar a:hover,
+html.inat-dark header.site-header a:hover {
+    color: var(--link) !important;
+}
+
+html.inat-dark .navbar .dropdown-menu {
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* 2) Timeline items */
+html.inat-dark .timeline-heading,
+html.inat-dark .Timeline-heading,
+html.inat-dark .updates .heading,
+html.inat-dark .activity .heading {
+    background: var(--card)!important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    /* padding: var(--space-3) var(--space-4) !important; */
+}
+
+html.inat-dark .timeline-item,
+html.inat-dark .Timeline-item,
+html.inat-dark .updates .item,
+html.inat-dark .activity .item {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+}
+
+html.inat-dark .activity {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+}
+
+/* 3) Thumbnails (image cards) */
+html.inat-dark .thumbnail {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+html.inat-dark .thumbnail .caption {
+    color: var(--text) !important;
+    /* padding: var(--space-3) !important; */
+}
+
+html.inat-dark .thumbnail a {
+    color: var(--link) !important;
+}
+
+/* Ensure the image itself stays normal (no dark filters) */
+html.inat-dark .thumbnail img {
+    filter: none !important;
+    background: transparent !important;
+}
+
+/* 4) Minor header badges/icons */
+html.inat-dark .navbar .badge,
+html.inat-dark .navbar .label {
+    background: #1e2127 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* --- DARK PATCH v4: #header + timeline borders & spine --- */
+
+/* 1) Top header bar (id-specific) */
+html.inat-dark #header,
+html.inat-dark header#header {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+html.inat-dark #header a {
+    color: var(--text) !important;
+}
+
+html.inat-dark #header a:hover {
+    color: var(--brand-green) !important;
+}
+
+/* Search in header (if present) */
+html.inat-dark #header input[type="search"],
+html.inat-dark #header .form-control {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark #header input::placeholder {
+    color: #9aa0a6 !important;
+}
+
+/* Dropdowns from header */
+html.inat-dark #header .dropdown-menu {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* 2) Timeline containers & item borders */
+html.inat-dark .timeline,
+html.inat-dark .Timeline,
+html.inat-dark .updates,
+html.inat-dark .Activity,
+html.inat-dark .activity-stream,
+html.inat-dark #carousel-container .row.no-gutters {
+    /* ensure container doesn’t bring light borders */
+    border-color: var(--border) !important;
+}
+
+/* Individual timeline items + headers keep consistent border & bg */
+html.inat-dark .timeline-item,
+html.inat-dark .Timeline-item,
+html.inat-dark .updates .item,
+html.inat-dark .activity .item {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+}
+
+html.inat-dark .timeline-heading,
+html.inat-dark .Timeline-heading,
+html.inat-dark .updates .heading {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    /* padding: var(--space-3) var(--space-4) !important; */
+}
+
+/* 3) Vertical timeline spine & markers
+   iNat/Bootstrap variants use ::before spines, or a .line/.spine element, and badges. */
+html.inat-dark .timeline::before,
+html.inat-dark .Timeline::before,
+html.inat-dark .updates::before,
+html.inat-dark .activity::before {
+    background: var(--border) !important;
+    /* spine color */
+}
+html.inat-dark .timeline::before,
+html.inat-dark .Timeline::before {
+    margin-left: 23px !important;
+}
+
+html.inat-dark .observations.mini .bubbles a {
+    color: var(--bg) !important;
+    font-weight: 700 !important;
+}
+
+html.inat-dark .observations.mini .observation {
+    border-bottom: 1px solid var(--border) !important;
+    padding-bottom: 1rem !important;
+}
+
+html.inat-dark .observations.mini a.research_grade_notice {
+    background-color: var(--brand-green) !important;
+}
+
+
+/* If they use a separate element for the spine */
+html.inat-dark .timeline .line,
+html.inat-dark .Timeline .line,
+html.inat-dark .updates .line,
+html.inat-dark .activity .line,
+html.inat-dark .timeline .spine {
+    background: var(--border) !important;
+}
+
+/* Badges/dots on the spine */
+html.inat-dark .timeline-badge,
+html.inat-dark .Timeline-badge,
+html.inat-dark .updates .badge,
+html.inat-dark .activity .badge-dot,
+html.inat-dark .event-marker {
+    background: #1e2127 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 0 0 2px var(--bg);
+    /* keeps a halo against cards */
+}
+
+/* Thin separators between stacked items */
+html.inat-dark .timeline .item+.item,
+html.inat-dark .updates .item+.item {
+    border-top: 1px solid var(--border) !important;
+}
+
+/* --- DARK PATCH v4: #header + timeline borders & spine --- */
+
+/* 1) Top header bar (id-specific) */
+html.inat-dark #header,
+html.inat-dark header#header {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+html.inat-dark #header a {
+    color: var(--text) !important;
+}
+
+
+/* Search in header (if present) */
+html.inat-dark #header input[type="search"],
+html.inat-dark #header .form-control {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+html.inat-dark #header input::placeholder {
+    color: #9aa0a6 !important;
+}
+
+/* Dropdowns from header */
+html.inat-dark #header .dropdown-menu {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* 2) Timeline containers & item borders */
+html.inat-dark .timeline,
+html.inat-dark .Timeline,
+html.inat-dark .updates,
+html.inat-dark .Activity,
+html.inat-dark .activity-stream {
+    /* ensure container doesn’t bring light borders */
+    border-color: var(--border) !important;
+}
+
+/* Individual timeline items + headers keep consistent border & bg */
+html.inat-dark .timeline-item,
+html.inat-dark .Timeline-item,
+html.inat-dark .updates .item,
+html.inat-dark .activity .item {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+}
+
+html.inat-dark .timeline-heading,
+html.inat-dark .Timeline-heading,
+html.inat-dark .updates .heading {
+    background: #1a1c21 !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    /* padding: var(--space-3) var(--space-4) !important; */
+}
+
+/* 3) Vertical timeline spine & markers
+   iNat/Bootstrap variants use ::before spines, or a .line/.spine element, and badges. */
+html.inat-dark .timeline::before,
+html.inat-dark .Timeline::before,
+html.inat-dark .updates::before,
+html.inat-dark .activity::before {
+    background: var(--border) !important;
+    /* spine color */
+}
+
+/* If they use a separate element for the spine */
+html.inat-dark .timeline .line,
+html.inat-dark .Timeline .line,
+html.inat-dark .updates .line,
+html.inat-dark .activity .line,
+html.inat-dark .timeline .spine {
+    background: var(--border) !important;
+}
+
+/* Badges/dots on the spine */
+html.inat-dark .timeline-badge,
+html.inat-dark .Timeline-badge,
+html.inat-dark .updates .badge,
+html.inat-dark .activity .badge-dot,
+html.inat-dark .event-marker {
+    background: #1e2127 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 0 0 2px var(--bg);
+    /* keeps a halo against cards */
+}
+
+/* Thin separators between stacked items */
+html.inat-dark .timeline .item+.item,
+html.inat-dark .updates .item+.item {
+    border-top: 1px solid var(--border) !important;
+}
+
+/* Scientific names should follow link color for visibility */
+html.inat-dark .sciname {
+    color: var(--link) !important;
+}
+
+/* Timestamp spans should be bright enough in dark mode */
+html.inat-dark .time {
+    color: #efefef !important;
+}
+
+/* Any <i> tag inside a span within .media-body should also inherit this */
+html.inat-dark .media-body span i {
+    color: #efefef !important;
+}

@@ -1,0 +1,2 @@
+/* Minimal reset only for dark theming safety */
+html.inat-dark *, html.inat-dark *::before, html.inat-dark *::after{ box-sizing: border-box; }
