@@ -23,7 +23,7 @@ html.inat-dark .mainrow .main-col,
 html.inat-dark #ObservationShow .data_quality_assessment,
 html.inat-dark #ObservationShow .more_from,
 html.inat-dark #wrapper>.container,
-html.inat-dark#wrapper>.container .col-sm-8,
+html.inat-dark #wrapper>.container .col-sm-8,
 html.inat-dark #app {
     background: var(--bg) !important;
     color: var(--text) !important;
