@@ -20,10 +20,11 @@ html.inat-dark *:focus {
 
 html.inat-dark body,
 html.inat-dark .mainrow .main-col,
-#ObservationShow .data_quality_assessment,
-#ObservationShow .more_from,
-#wrapper>.container,
-#wrapper>.container .col-sm-8 {
+html.inat-dark #ObservationShow .data_quality_assessment,
+html.inat-dark #ObservationShow .more_from,
+html.inat-dark #wrapper>.container,
+html.inat-dark#wrapper>.container .col-sm-8,
+html.inat-dark #app {
     background: var(--bg) !important;
     color: var(--text) !important;
 }
@@ -210,7 +211,11 @@ html.inat-dark .bootstrap .table > tbody > tr > td {
 }
 
 html.inat-dark table tr:nth-child(even) {
-    background-color: #1b1e24 !important;
+    background-color: #2a2e37 !important;
+}
+
+html.inat-dark .Annotations tbody tr:nth-child(2n+1), html.inat-dark .bootstrap .Annotations tbody tr:nth-child(2n+1) {
+    background-color: #0e0f12 !important;
 }
 
 html.inat-dark .sortable-table td.sorting {
@@ -299,9 +304,27 @@ html.inat-dark #ObservationShow .top_row .photos_column .PhotoBrowser .image-gal
     background: var(--bg) !important;
 }
 
+/* Map */
 html.inat-dark .Map {
     border-color: var(--border) !important;
 }
+
+html.inat-dark #obs-container, 
+html.inat-dark #obs-container .container, 
+html.inat-dark #map, 
+html.inat-dark #observations-map {
+    height: calc(100vh - 15rem) !important;
+}
+
+html.inat-dark #obs-container .taxon.has-com-name .secondary-name {
+    color: var(--muted) !important;
+}
+
+html.inat-dark #obs {
+    background-color: var(--bg) !important;
+    height: calc(100vh - 18rem) !important;
+}
+
 
 html.inat-dark #ObservationShow .top_row .info_column .user_info,
 html.inat-dark .TaxonomicBranch .taxonomy li.tabular.has-children li.current.has-children .row-content>* {
