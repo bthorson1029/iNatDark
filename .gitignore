@@ -1,0 +1,10 @@
+# Build artifacts
+dist/
+web-ext-artifacts/
+
+# Dependencies
+node_modules/
+
+# OS cruft
+.DS_Store
+Thumbs.db
