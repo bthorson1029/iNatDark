@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Dark Mode for iNaturalist",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Adds a persistent, accessible dark mode to iNaturalist.",
     "icons": {
         "16": "assets/icons/iNat-Dark-favicon-16x16.png",

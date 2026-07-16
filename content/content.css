@@ -22,11 +22,47 @@ html.inat-dark body,
 html.inat-dark .mainrow .main-col,
 html.inat-dark #ObservationShow .data_quality_assessment,
 html.inat-dark #ObservationShow .more_from,
-html.inat-dark #wrapper>.container,
-html.inat-dark #wrapper>.container .col-sm-8,
+html.inat-dark #wrapper > .container,
+html.inat-dark #wrapper > .container .col-sm-8,
 html.inat-dark #app {
     background: var(--bg) !important;
     color: var(--text) !important;
+}
+
+html.inat-dark .mainrow, 
+html.inat-dark .mainrow .SideBar,
+html.inat-dark .mainrow .SideBar button.hide-button,
+html.inat-dark .mainrow .rc-pagination li a,
+html.inat-dark #wrapper ul.leftmenu,
+html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ac {
+    background: var(--card) !important;
+    color: var(--text) !important;
+}
+
+/* Autocomplete image thumbnail */
+html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ac .ac-thumb img {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Add obs button */
+html.inat-dark #wrapper a#obsbutton.btn.btn-default {
+    margin-top: 1rem !important;
+}
+
+html.inat-dark .mainrow li.rc-pagination-item-active a {
+    border-color: var(--brand-green) !important;
+}
+
+html.inat-dark #wrapper ul.leftmenu li a.active {
+    background: var(--brand-green) !important;
+    color: var(--bg) !important;
+    font-weight: 700 !important;
+}
+
+html.inat-dark .mainrow,
+html.inat-dark .mainrow .main-col {
+    box-shadow: inset 0 10px 10px -10px var(--shadow) !important;
 }
 
 html.inat-dark a {
