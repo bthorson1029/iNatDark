@@ -124,8 +124,17 @@ html.inat-dark .ui-autocomplete .ac-result .ac-label,
     color: var(--text) !important;
 }
 
-html.inat-dark .ui-autocomplete .ui-state-focus {
+/* Focused result. ui-state-focus sits on the row in some autocompletes and on
+   .ac itself in others; the #inat-universal-autocomplete variants are required
+   to outrank the id-scoped .ac background above. Outline rather than border so
+   rows do not resize as focus moves between results. */
+html.inat-dark .ui-autocomplete .ui-state-focus,
+html.inat-dark .ui-autocomplete .ui-state-focus .ac,
+html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ui-state-focus .ac,
+html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ac.ui-state-focus {
     background: var(--card) !important;
+    outline: 2px solid var(--brand-green) !important;
+    outline-offset: -2px !important;
 }
 
 html.inat-dark .ui-autocomplete a.ac-view {
