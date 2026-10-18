@@ -1511,3 +1511,20 @@ html.inat-dark #ObservationShow .opposite_activity .panel {
     padding: 0 !important;
 }
 
+/* Taxon names: Identify hardcodes black on these, so match light mode's
+   plain text colour rather than leaving them black on dark. */
+html.inat-dark .ObservationsGridItem .taxon .display-name,
+html.inat-dark .ObservationsGridItem .taxon .secondary-name,
+html.inat-dark .ObservationModal .SplitTaxon.taxon > .display-name,
+html.inat-dark .ObservationModal .SplitTaxon.taxon .display-names .display-name,
+html.inat-dark .ObservationModal .obs-modal-header .SplitTaxon.taxon > .display-name,
+html.inat-dark .ObservationModal .obs-modal-header .SplitTaxon.taxon .display-names,
+html.inat-dark .ActivityItem span.taxon > .display-name,
+html.inat-dark .ActivityItem span.taxon > .display-names .display-name,
+html.inat-dark .ActivityItem span.taxon .secondary-name,
+html.inat-dark .ActivityItem span.taxon .secondary-names,
+html.inat-dark .ActivityItem span.taxon .member-group .display-name,
+html.inat-dark .QualityMetrics tr.improve .current-community-taxon .SplitTaxon > span,
+html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon {
+    color: var(--text) !important;
+}
