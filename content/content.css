@@ -1370,12 +1370,14 @@ html.inat-dark .media-body span i {
 
 /* --- 1.0.3: unreadable text, light surfaces and light/dark parity --- */
 
-/* Data Quality Assessment: iNat whites out every other row */
-html.inat-dark .QualityMetrics tbody tr:nth-child(2n+1) {
+/* Data Quality Assessment and Annotations: iNat whites out every other row */
+html.inat-dark .QualityMetrics tbody tr:nth-child(2n+1),
+html.inat-dark .Annotations tbody tr:nth-child(2n+1) {
     background: var(--card) !important;
 }
 
-html.inat-dark .QualityMetrics tbody tr:nth-child(2n) {
+html.inat-dark .QualityMetrics tbody tr:nth-child(2n),
+html.inat-dark .Annotations tbody tr:nth-child(2n) {
     background: transparent !important;
 }
 
@@ -1395,7 +1397,6 @@ html.inat-dark .RecordChooserPopover.popover a,
 html.inat-dark .UsersPopoverOverlay a,
 html.inat-dark .ActivityItem .panel-title a.user,
 html.inat-dark .ActivityItem .panel-footer a,
-html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
 html.inat-dark .IdentifierStats .user a,
 html.inat-dark .ProgressChart .footer,
 html.inat-dark .ProgressChart .count,
@@ -1514,11 +1515,26 @@ html.inat-dark #ObservationShow .opposite_activity .panel {
     padding: 0 !important;
 }
 
-/* Scientific names should follow link color for visibility (Identify
-   hardcodes them black, so they need this; elsewhere they match light mode) */
+/* Scientific names should follow link color for visibility (Identify and the
+   older server-rendered pages hardcode them black or #333, so they need this;
+   elsewhere they match light mode) */
 html.inat-dark .ObservationsGridItem .sciname,
 html.inat-dark .ObservationModal .sciname,
 html.inat-dark .ActivityItem .sciname,
-html.inat-dark .QualityMetrics .sciname {
+html.inat-dark .QualityMetrics .sciname,
+html.inat-dark .taxon > a > .sciname,
+html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
+html.inat-dark .TaxonomicBranch .taxonomy .taxon .sciname,
+html.inat-dark .TaxonomicBranch .taxonomy .taxon .rank {
     color: var(--link) !important;
+}
+
+/* Place subscriptions show the taxon as a grey aside, as in light mode */
+html.inat-dark #subscriptions .list-group .othernames .sciname {
+    color: var(--muted) !important;
+}
+
+/* Taxonomy tree: the common name in parentheses stays text-coloured */
+html.inat-dark .TaxonomicBranch .taxonomy .taxon .comname {
+    color: var(--text) !important;
 }

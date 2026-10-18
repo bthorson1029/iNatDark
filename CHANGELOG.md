@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   footer, Identify progress bar, pagination outside the Identify sidebar, the
   life-list banner, chart controls and Wikipedia boxes on taxon About tabs.
 - Disabled buttons on the upload page look disabled again.
+- Identify's Annotations table no longer has a white first row, and taxon
+  names in the taxonomy tree, home feed and Subscriptions use the link colour
+  instead of near-black.
 - 20 selectors that were not scoped to dark mode no longer change light mode.
 
 ### Changed
