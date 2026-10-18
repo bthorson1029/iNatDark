@@ -43,7 +43,7 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 ## Development
 - Edit CSS variables in `content/content.css` for quick visual tuning.
 - Add specific component fixes under the `html.inat-dark` scope only.
-- Change colours, not layout: check each fix against light mode so spacing and states match.
+- Change colors, not layout: check each fix against light mode so spacing and states match.
 - Avoid blanket `filter: invert()` techniques.
 
 

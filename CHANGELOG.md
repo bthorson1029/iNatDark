@@ -27,23 +27,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   life-list banner, chart controls and Wikipedia boxes on taxon About tabs.
 - Disabled buttons on the upload page look disabled again.
 - Identify's Annotations table no longer has a white first row, and taxon
-  names in the taxonomy tree, home feed and Subscriptions use the link colour
+  names in the taxonomy tree, home feed and Subscriptions use the link color
   instead of near-black.
 - Identify: the Place field's clear icon has no white box, the observation
   modal tabs are readable, the Annotations tab is flat like the observation
   page, and the Filters popover footer, field icons and link buttons are dark.
 - Explore map view: the hovered list item and the map popup are dark, and
-  scientific names use the link colour.
+  scientific names use the link color.
 - Upload page: the toolbar no longer glows, and header borders are dark.
 - 20 selectors that were not scoped to dark mode no longer change light mode.
 
 ### Changed
-- Dark mode now changes colour only, not layout: removed extra card padding,
+- Dark mode now changes color only, not layout: removed extra card padding,
   button margins, input padding and table zebra-striping that light mode does
   not have, so pages keep the same height and spacing in both themes.
 - The calendar keeps light mode's meaning: out-of-month days are faded, days
   with observations are links, and their shading still scales with the count.
-- Taxon names keep iNaturalist's own colours instead of turning link-blue.
+- Taxon names keep iNaturalist's own colors instead of turning link-blue.
 
 ### Removed
 - The draggable on-page toggle, which never rendered in any release; use the

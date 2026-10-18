@@ -1156,7 +1156,7 @@ html.inat-dark .nav_add_obs.navbar {
     box-shadow: none !important;
 }
 
-/* ...and its divider before Select All is light grey */
+/* ...and its divider before Select All is light gray */
 html.inat-dark .nav_add_obs li {
     border-color: var(--border) !important;
 }
@@ -1567,12 +1567,12 @@ html.inat-dark .TaxonomicBranch .taxonomy .taxon .rank {
     color: var(--link) !important;
 }
 
-/* Place subscriptions show the taxon as a grey aside, as in light mode */
+/* Place subscriptions show the taxon as a gray aside, as in light mode */
 html.inat-dark #subscriptions .list-group .othernames .sciname {
     color: var(--muted) !important;
 }
 
-/* Taxonomy tree: the common name in parentheses stays text-coloured */
+/* Taxonomy tree: the common name in parentheses stays text-colored */
 html.inat-dark .TaxonomicBranch .taxonomy .taxon .comname {
     color: var(--text) !important;
 }
