@@ -931,6 +931,9 @@ html.inat-dark .btn-primary {
 }
 
 html.inat-dark .TaxonThumbnail .taxon .secondary-name,
+html.inat-dark .ObservationsGridItem .comname,
+html.inat-dark .ObservationModal .comname,
+html.inat-dark .ActivityItem .comname,
 html.inat-dark span.rank,
 html.inat-dark span.othernames span.comname {
     color: var(--text) !important;
@@ -1384,7 +1387,7 @@ html.inat-dark .ObservationModal .map-and-details .details > ul .view-follow .pe
 html.inat-dark .ObservationModal .user-link,
 html.inat-dark .ObservationModal .Faves a,
 html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon,
-html.inat-dark .ObservationModal .SplitTaxon .secondary-name,
+html.inat-dark .ObservationModal .comname,
 html.inat-dark .ObservationModal h4,
 html.inat-dark .ObservationModal .inat-tabs li a,
 html.inat-dark .Suggestions .RecordChooserPopoverTrigger label,
@@ -1511,20 +1514,11 @@ html.inat-dark #ObservationShow .opposite_activity .panel {
     padding: 0 !important;
 }
 
-/* Taxon names: Identify hardcodes black on these, so match light mode's
-   plain text colour rather than leaving them black on dark. */
-html.inat-dark .ObservationsGridItem .taxon .display-name,
-html.inat-dark .ObservationsGridItem .taxon .secondary-name,
-html.inat-dark .ObservationModal .SplitTaxon.taxon > .display-name,
-html.inat-dark .ObservationModal .SplitTaxon.taxon .display-names .display-name,
-html.inat-dark .ObservationModal .obs-modal-header .SplitTaxon.taxon > .display-name,
-html.inat-dark .ObservationModal .obs-modal-header .SplitTaxon.taxon .display-names,
-html.inat-dark .ActivityItem span.taxon > .display-name,
-html.inat-dark .ActivityItem span.taxon > .display-names .display-name,
-html.inat-dark .ActivityItem span.taxon .secondary-name,
-html.inat-dark .ActivityItem span.taxon .secondary-names,
-html.inat-dark .ActivityItem span.taxon .member-group .display-name,
-html.inat-dark .QualityMetrics tr.improve .current-community-taxon .SplitTaxon > span,
-html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon {
-    color: var(--text) !important;
+/* Scientific names should follow link color for visibility (Identify
+   hardcodes them black, so they need this; elsewhere they match light mode) */
+html.inat-dark .ObservationsGridItem .sciname,
+html.inat-dark .ObservationModal .sciname,
+html.inat-dark .ActivityItem .sciname,
+html.inat-dark .QualityMetrics .sciname {
+    color: var(--link) !important;
 }
