@@ -1,5 +1,5 @@
 (function(){
-  const api = typeof browser !== 'undefined' ? browser : chrome;
+  const api = globalThis.chrome || globalThis.browser;
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
   const radios = Array.from(document.querySelectorAll('input[name="mode"]'));
   const donateBtn = document.getElementById('donate');
@@ -21,18 +21,6 @@
     } else {
       setPopupTheme(mode);
     }
-  }
-
-  function tryNotifyActiveTab(msg){
-    try {
-      if (!api.tabs || !api.tabs.query) return;  // no "tabs" permission—skip
-      api.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const tab = tabs && tabs[0];
-        if (tab && tab.id) {
-          try { api.tabs.sendMessage(tab.id, msg); } catch(e){}
-        }
-      });
-    } catch {}
   }
 
   if (donateBtn){
@@ -61,14 +49,10 @@
     if (v === 'system') {
       api.storage.sync.remove('inatDarkPref', () => {
         applyPopupTheme('system');
-        tryNotifyActiveTab({ type: 'inat-reapply-theme' }); // optional
-        // content.js should also react via storage.onChanged
       });
     } else {
       api.storage.sync.set({ inatDarkPref: v }, () => {
         applyPopupTheme(v);
-        tryNotifyActiveTab({ type: 'inat-reapply-theme' }); // optional
-        // content.js should also react via storage.onChanged
       });
     }
   }));

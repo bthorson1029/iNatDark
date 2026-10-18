@@ -1,7 +1,7 @@
 # iNaturalist Dark Mode Toggle (MV3)
 
 
-A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to iNaturalist, with a draggable on-page toggle, MutationObserver handling for SPA-like navigation, and storage-backed preferences.
+A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to iNaturalist, with a toolbar popup for System / Light / Dark and storage-backed preferences.
 
 
 ## Install (Developer Mode)
@@ -24,8 +24,7 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 
 ## Usage
 - Visit `https://www.inaturalist.org/`.
-- Toggle the plugin menu in the browser toolbar.
-- Open the toolbar popup to change **Mode** (System/Light/Dark)
+- Open the toolbar popup to choose **System**, **Light** or **Dark**. System follows your OS setting live.
 
 
 ## Design & Accessibility
@@ -36,14 +35,15 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 
 
 ## How It Works
-- **FOUC prevention**: content script injects a tiny style at `document_start`, then resolves visibility after reading settings.
-- **Persistence**: preferences stored in `storage.sync` override system theme after first toggle.
-- **Dynamic content**: a `MutationObserver` re-applies the theme when SPA navigation/infinite-scroll injects new nodes; route changes detected by patching `history` and listening to `popstate`.
+- **FOUC prevention**: the content script hides the page at `document_start` until the saved preference is read, with a one-second failsafe.
+- **Persistence**: the popup stores `inatDarkPref` (`dark`, `light`, or unset for System) in `storage.sync`; every open tab picks up changes through `storage.onChanged`.
+- **Dynamic content**: the theme is a single `html.inat-dark` class, which survives in-page navigation, so no re-application is needed.
 
 
 ## Development
 - Edit CSS variables in `content/content.css` for quick visual tuning.
 - Add specific component fixes under the `html.inat-dark` scope only.
+- Change colours, not layout: check each fix against light mode so spacing and states match.
 - Avoid blanket `filter: invert()` techniques.
 
 
@@ -57,4 +57,4 @@ A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to i
 
 
 ## License
-MIT
+MIT

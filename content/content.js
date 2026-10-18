@@ -1,152 +1,109 @@
-// Content script: early FOUC guard + toggle injection + observers
-// Enhanced with persistent theme saving and dark logo swap
-
-const API = typeof browser !== 'undefined' ? browser : chrome;
-
-function attachObservers() {
-    window.__inatDom.observeMutations(() => {
-        window.__inatTheme.reapply();
-        setTimeout(bindToggleOnce, 0);
-    });
-    window.__inatDom.onRouteChange(() => {
-        window.__inatTheme.reapply();
-        setTimeout(() => { renderToggle(); bindToggleOnce(); }, 0);
-    });
-}
-
-(async function main() {
-    try {
-        await initTheme();
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => { renderToggle(); attachObservers(); bindToggleOnce(); }, { once: true });
-        } else { renderToggle(); attachObservers(); bindToggleOnce(); }
-    } catch (err) {
-        document.documentElement.style.visibility = 'visible';
-        const guard = document.documentElement.querySelector('style[data-inat-fouc]');
-        if (guard) guard.remove();
-        console.error('[iNat Dark] init error', err);
-    }
-})();
-
+// Content script: applies the saved theme before first paint, keeps it in sync
+// with the popup and the OS setting, and swaps the header logo for a light one.
 (function () {
+    const API = globalThis.chrome || globalThis.browser;
+    const root = document.documentElement;
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const DARK_LOGO_URL = API.runtime.getURL('assets/iNat-logo--white.svg');
+
+    // 'dark' | 'light' | null (follow the OS)
+    let pref = null;
+
+    // FOUC guard: hide the page until the stored preference is known. The
+    // timeout is a failsafe so a storage error can never leave it hidden.
+    const guard = document.createElement('style');
+    guard.textContent = 'html{visibility:hidden !important}';
+    root.appendChild(guard);
+    const reveal = () => guard.remove();
+    setTimeout(reveal, 1000);
+
+    function isDark() {
+        return pref === 'dark' || (pref !== 'light' && systemDark.matches);
+    }
+
+    function apply() {
+        root.classList.toggle('inat-dark', isDark());
+        syncLogo();
+    }
+
+    function readPref(value) {
+        return value === 'dark' || value === 'light' ? value : null;
+    }
+
     try {
-        API.runtime.onMessage.addListener((msg) => {
-            if (!msg || typeof msg !== 'object') return;
-            if (msg.type === 'inat-set-mode') {
-                setModeFromPopup(msg.mode);
-            }
+        API.storage.sync.get('inatDarkPref', (data) => {
+            pref = readPref(data && data.inatDarkPref);
+            apply();
+            reveal();
         });
-    } catch (e) { }
-})();
-
-const DARK_LOGO_URL = API.runtime.getURL('assets/iNat-logo--white.svg');
-
-function applyStoredTheme() {
-    API.storage.sync.get('inatDarkPref', ({ inatDarkPref }) => {
-        if (inatDarkPref === 'dark') {
-            document.documentElement.classList.add('inat-dark');
-        } else if (inatDarkPref === 'light') {
-            document.documentElement.classList.remove('inat-dark');
-        } else {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.classList.add('inat-dark');
-            } else {
-                document.documentElement.classList.remove('inat-dark');
-            }
-        }
-        syncLogoWithTheme();
-    });
-}
-
-function setModeFromPopup(mode) {
-    if (mode === 'dark') {
-        document.documentElement.classList.add('inat-dark');
-        API.storage.sync.set({ inatDarkPref: 'dark' });
-    } else if (mode === 'light') {
-        document.documentElement.classList.remove('inat-dark');
-        API.storage.sync.set({ inatDarkPref: 'light' });
-    } else {
-        API.storage.sync.remove('inatDarkPref', function(){ applyStoredTheme(); });
-        return;
+    } catch (err) {
+        console.error('[iNat Dark] could not read preference', err);
+        apply();
+        reveal();
     }
-    syncLogoWithTheme();
-}
 
-function bindToggleOnce(){
-    const btn = document.getElementById('inat-dark-toggle');
-    if (btn && !btn.dataset.bound) {
-        btn.addEventListener('click', () => {
-            const dark = document.documentElement.classList.toggle('inat-dark');
-            API.storage.sync.set({ inatDarkPref: dark ? 'dark' : 'light' });
-            syncLogoWithTheme();
-            API.runtime.sendMessage({ type: 'inat-mode-updated', mode: dark ? 'dark' : 'light' });
-        });
-        btn.dataset.bound = '1';
-    }
-}
-
-applyStoredTheme();
-
-(function watchHistory() {
-    const pushState = history.pushState;
-    history.pushState = function () {
-        pushState.apply(this, arguments);
-        applyStoredTheme();
-        bindToggleOnce();
-    };
-    window.addEventListener('popstate', function(){ applyStoredTheme(); bindToggleOnce(); });
-})();
-
-if (API.storage && API.storage.onChanged && typeof API.storage.onChanged.addListener === 'function') {
+    // Popup changes arrive through storage, in this tab and every other one.
     API.storage.onChanged.addListener((changes, area) => {
         if (area === 'sync' && changes.inatDarkPref) {
-            applyStoredTheme();
+            pref = readPref(changes.inatDarkPref.newValue);
+            apply();
         }
     });
-}
 
-function findLogo() {
-    return (
-        document.querySelector('#header img') ||
-        document.querySelector('#header .logo img') ||
-        document.querySelector('.navbar-brand img') ||
-        null
-    );
-}
+    // System mode follows the OS live, without a reload.
+    systemDark.addEventListener('change', () => {
+        if (pref === null) apply();
+    });
 
-function syncLogoWithTheme() {
-    const logo = findLogo();
-    if (!logo) return;
-    const dark = document.documentElement.classList.contains('inat-dark');
-
-    if (!logo.dataset.originalLogo) {
-        logo.dataset.originalLogo = logo.currentSrc || logo.src || '';
-        logo.dataset.originalWidth = logo.width;
-        logo.dataset.originalHeight = logo.height;
+    function findLogo() {
+        return document.querySelector('#header img') ||
+            document.querySelector('.navbar-brand img');
     }
 
-    if (dark) {
-        if (logo.src !== DARK_LOGO_URL) {
-            logo.src = DARK_LOGO_URL;
-            logo.srcset = DARK_LOGO_URL;
-            if (logo.dataset.originalWidth) logo.width = logo.dataset.originalWidth;
-            if (logo.dataset.originalHeight) logo.height = logo.dataset.originalHeight;
-            logo.style.removeProperty('filter');
+    function syncLogo() {
+        const logo = findLogo();
+        if (!logo) return;
+
+        if (!('originalSrc' in logo.dataset)) {
+            // Wait until the site's logo has a size, so the swap can keep it.
+            if (!logo.complete || !logo.offsetWidth) {
+                if (!logo.__inatWaiting) {
+                    logo.__inatWaiting = true;
+                    logo.addEventListener('load', () => {
+                        logo.__inatWaiting = false;
+                        syncLogo();
+                    }, { once: true });
+                }
+                return;
+            }
+            logo.dataset.originalSrc = logo.getAttribute('src') || '';
+            logo.dataset.originalSrcset = logo.getAttribute('srcset') || '';
+            logo.style.width = logo.offsetWidth + 'px';
+            logo.style.height = logo.offsetHeight + 'px';
         }
-    } else {
-        const orig = logo.dataset.originalLogo;
-        if (orig && logo.src !== orig) {
-            logo.src = orig;
-            logo.srcset = orig;
-            if (logo.dataset.originalWidth) logo.width = logo.dataset.originalWidth;
-            if (logo.dataset.originalHeight) logo.height = logo.dataset.originalHeight;
-            logo.style.removeProperty('filter');
+
+        if (isDark()) {
+            if (logo.getAttribute('src') !== DARK_LOGO_URL) {
+                logo.removeAttribute('srcset');
+                logo.setAttribute('src', DARK_LOGO_URL);
+            }
+        } else if (logo.getAttribute('src') !== logo.dataset.originalSrc) {
+            logo.setAttribute('src', logo.dataset.originalSrc);
+            if (logo.dataset.originalSrcset) logo.setAttribute('srcset', logo.dataset.originalSrcset);
         }
     }
-}
 
-const classObserver = new MutationObserver(() => syncLogoWithTheme());
-classObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-const domObserver = new MutationObserver(() => { syncLogoWithTheme(); bindToggleOnce(); });
-domObserver.observe(document.body || document.documentElement, { childList: true, subtree: true });
+    // The header is server-rendered, but some React pages re-render it; check
+    // once per frame at most, and only while the logo still needs swapping.
+    let scheduled = false;
+    new MutationObserver(() => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+            scheduled = false;
+            const logo = findLogo();
+            const want = isDark() ? DARK_LOGO_URL : logo && logo.dataset.originalSrc;
+            if (logo && logo.getAttribute('src') !== want) syncLogo();
+        });
+    }).observe(root, { childList: true, subtree: true });
+})();

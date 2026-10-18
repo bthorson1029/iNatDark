@@ -32,7 +32,7 @@ html.inat-dark #app {
 html.inat-dark .mainrow, 
 html.inat-dark .mainrow .SideBar,
 html.inat-dark .mainrow .SideBar button.hide-button,
-html.inat-dark .mainrow .rc-pagination li a,
+html.inat-dark .rc-pagination li a,
 html.inat-dark #wrapper ul.leftmenu,
 html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ac {
     background: var(--card) !important;
@@ -50,7 +50,7 @@ html.inat-dark #wrapper a#obsbutton.btn.btn-default {
     margin-top: 1rem !important;
 }
 
-html.inat-dark .mainrow li.rc-pagination-item-active a {
+html.inat-dark li.rc-pagination-item-active a {
     border-color: var(--brand-green) !important;
 }
 
@@ -107,7 +107,7 @@ html.inat-dark .Navbar,
 html.inat-dark header,
 html.inat-dark .nav,
 html.inat-dark .modal-content,
-.bootstrap .identification {
+html.inat-dark .bootstrap .identification {
     background: var(--card) !important;
     color: var(--text) !important;
 }
@@ -120,7 +120,7 @@ html.inat-dark #header #usernav .hasmessages i.fa{
 }
 
 html.inat-dark .ui-autocomplete .ac-result .ac-label,
-.ui-autocomplete .category .ac-label {
+html.inat-dark .ui-autocomplete .category .ac-label {
     color: var(--text) !important;
 }
 
@@ -222,9 +222,19 @@ html.inat-dark .media .media-body>i.fa {
 }
 
 /* Calendar */
+/* Days with observations keep iNat's per-day shading (an inline background
+   that darkens with the count); inverting it keeps that scale readable. */
 html.inat-dark .calendar .daylink {
-    background-color: #74ac00 !important;
-    color: var(--text) !important;
+    color: #337ab7 !important;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+html.inat-dark .calendar td {
+    color: #7a7f88 !important;
+}
+
+html.inat-dark .calendar td.notmonth {
+    color: #3a3d44 !important;
 }
 
 html.inat-dark .dropdown-menu {
@@ -255,14 +265,6 @@ html.inat-dark .bootstrap .table > tbody > tr > td {
     border: none !important;
 }
 
-html.inat-dark table tr:nth-child(even) {
-    background-color: #2a2e37 !important;
-}
-
-html.inat-dark .Annotations tbody tr:nth-child(2n+1), html.inat-dark .bootstrap .Annotations tbody tr:nth-child(2n+1) {
-    background-color: #0e0f12 !important;
-}
-
 html.inat-dark .sortable-table td.sorting {
     background-color: unset !important;
 }
@@ -271,13 +273,13 @@ html.inat-dark .split-taxon .noname.display-name {
     color: var(--muted) !important;
 }
 
-html.inat-dark .row .media {
+html.inat-dark .timeline .row .media {
     padding: 1rem !important;
 }
-html.inat-dark .row .media:nth-child(odd) {
+html.inat-dark .timeline .row .media:nth-child(odd) {
     background: var(--card) !important;
 }
-html.inat-dark .row .media:first-child {
+html.inat-dark .timeline .row .media:first-child {
     margin-top: 1rem !important;
 }
 
@@ -532,78 +534,9 @@ html.inat-dark .leaflet-popup-tip {
 }
 
 
-/* Toggle button */
-#inat-dark-toggle {
-    position: fixed;
-    z-index: 999999;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px var(--shadow);
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    outline: none;
-}
-
-#inat-dark-toggle:hover {
-    filter: brightness(1.05);
-}
-
-#inat-dark-toggle:active {
-    transform: translateY(1px);
-}
-
-#inat-dark-toggle svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-}
-
-#inat-dark-toggle .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-
-/* Corner snapping helpers (fallback if dragging disabled) */
-#inat-dark-toggle.corner-bottom-right {
-    right: 16px;
-    bottom: 16px;
-}
-
-#inat-dark-toggle.corner-bottom-left {
-    left: 16px;
-    bottom: 16px;
-}
-
-#inat-dark-toggle.corner-top-right {
-    right: 16px;
-    top: 16px;
-}
-
-#inat-dark-toggle.corner-top-left {
-    left: 16px;
-    top: 16px;
-}
-
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    html.inat-dark * {
         transition: none !important;
         animation: none !important;
     }
@@ -726,7 +659,7 @@ html.inat-dark a.inline-block.label.label-default {
     opacity: 1.0 !important;
 }
 
-#forum .list-group-item .title .label-default {
+html.inat-dark #forum .list-group-item .title .label-default {
     opacity: 0.8 !important;
 }
 
@@ -931,7 +864,7 @@ html.inat-dark .CommunityIdentification .info {
     box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
 }
 
-#ObservationShow .top_row .info_column {
+html.inat-dark #ObservationShow .top_row .info_column {
     background: var(--card) !important;
     color: var(--text) !important;
     border: 1px solid var(--border) !important;
@@ -943,11 +876,6 @@ html.inat-dark #ObservationShow .top_row .info_column .UserWithIcon .title a {
 }
 
 
-
-html.inat-dark #projects-panel .panel,
-html.inat-dark .opposite_activity .panel.panel-default {
-    padding: 1rem !important;
-}
 
 html.inat-dark #ObservationShow .comment_id_panel .tab-content {
     background-color: var(--bg) !important;
@@ -996,21 +924,6 @@ html.inat-dark .card-footer {
     background: #1a1c21 !important;
     color: var(--text) !important;
     border-top: 1px solid var(--border) !important;
-    padding: var(--space-3) var(--space-4) !important;
-}
-
-/* E. Buttons never flush against edges */
-html.inat-dark .panel .btn,
-html.inat-dark .card .btn,
-html.inat-dark .Identification .btn,
-html.inat-dark .activity .btn,
-html.inat-dark .comment .btn,
-html.inat-dark .reply .btn {
-    margin: 0 var(--space-2) var(--space-2) 0 !important;
-}
-
-html.inat-dark .btn-sm {
-    padding: 4px 8px !important;
 }
 
 html.inat-dark .btn-primary {
@@ -1063,13 +976,6 @@ html.inat-dark #ObservationShow a.secondary-name {
 }
 
 
-/* If buttons live in an actions row/footer, give the row padding */
-html.inat-dark .actions,
-html.inat-dark .button-row,
-html.inat-dark .controls {
-    padding-top: var(--space-2);
-}
-
 /* F. List items and zebra tables: readable density */
 html.inat-dark .list-group-item,
 html.inat-dark li.list-group-item {
@@ -1119,10 +1025,10 @@ html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
 }
 
 html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a,
-.TaxonPageTabs .nav-tabs>li>a:hover,
-.TaxonPageTabs .nav-tabs>li>a:focus,
-.TaxonPageTabs .nav-tabs>li.active>a:hover,
-.TaxonPageTabs .nav-tabs>li.active>a:focus,
+html.inat-dark .TaxonPageTabs .nav-tabs>li>a:hover,
+html.inat-dark .TaxonPageTabs .nav-tabs>li>a:focus,
+html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a:hover,
+html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a:focus,
 html.inat-dark #charts.Charts>ul>li.active>a,
 html.inat-dark #charts.Charts>ul>li>a:hover,
 html.inat-dark #charts.Charts>ul>li>a:focus,
@@ -1153,8 +1059,8 @@ html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
 }
 
 html.inat-dark #charts.Charts>ul>li>a:focus,
-.TaxonPageTabs .nav-tabs>li.active>a:focus,
-.TaxonPageTabs .nav-tabs>li>a:focus,
+html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a:focus,
+html.inat-dark .TaxonPageTabs .nav-tabs>li>a:focus,
 html.inat-dark .nav-tabs.user-subnav>li>a:focus {
     outline: 2px solid #74ac00 !important;
     outline-offset: 2px !important;
@@ -1181,7 +1087,6 @@ html.inat-dark select {
     background: #101215 !important;
     color: var(--text) !important;
     border: 1px solid var(--border) !important;
-    padding: 6px 10px !important;
 }
 
 html.inat-dark input::placeholder,
@@ -1196,7 +1101,6 @@ html.inat-dark .tooltip-inner {
     background: var(--card) !important;
     color: var(--text) !important;
     border: 1px solid var(--border) !important;
-    padding: var(--space-3) !important;
 }
 
 /* K. Prevent layout shift: borders match original 1px thickness */
@@ -1451,113 +1355,6 @@ html.inat-dark .updates .item+.item {
     border-top: 1px solid var(--border) !important;
 }
 
-/* --- DARK PATCH v4: #header + timeline borders & spine --- */
-
-/* 1) Top header bar (id-specific) */
-html.inat-dark #header,
-html.inat-dark header#header {
-    background: var(--card) !important;
-    color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
-}
-
-html.inat-dark #header a {
-    color: var(--text) !important;
-}
-
-
-/* Search in header (if present) */
-html.inat-dark #header input[type="search"],
-html.inat-dark #header .form-control {
-    background: #101215 !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-}
-
-html.inat-dark #header input::placeholder {
-    color: #9aa0a6 !important;
-}
-
-/* Dropdowns from header */
-html.inat-dark #header .dropdown-menu {
-    background: var(--card) !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-}
-
-/* 2) Timeline containers & item borders */
-html.inat-dark .timeline,
-html.inat-dark .Timeline,
-html.inat-dark .updates,
-html.inat-dark .Activity,
-html.inat-dark .activity-stream {
-    /* ensure container doesn’t bring light borders */
-    border-color: var(--border) !important;
-}
-
-/* Individual timeline items + headers keep consistent border & bg */
-html.inat-dark .timeline-item,
-html.inat-dark .Timeline-item,
-html.inat-dark .updates .item,
-html.inat-dark .activity .item {
-    background: var(--card) !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 6px;
-}
-
-html.inat-dark .timeline-heading,
-html.inat-dark .Timeline-heading,
-html.inat-dark .updates .heading {
-    background: #1a1c21 !important;
-    color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
-    /* padding: var(--space-3) var(--space-4) !important; */
-}
-
-/* 3) Vertical timeline spine & markers
-   iNat/Bootstrap variants use ::before spines, or a .line/.spine element, and badges. */
-html.inat-dark .timeline::before,
-html.inat-dark .Timeline::before,
-html.inat-dark .updates::before,
-html.inat-dark .activity::before {
-    background: var(--border) !important;
-    /* spine color */
-}
-
-/* If they use a separate element for the spine */
-html.inat-dark .timeline .line,
-html.inat-dark .Timeline .line,
-html.inat-dark .updates .line,
-html.inat-dark .activity .line,
-html.inat-dark .timeline .spine {
-    background: var(--border) !important;
-}
-
-/* Badges/dots on the spine */
-html.inat-dark .timeline-badge,
-html.inat-dark .Timeline-badge,
-html.inat-dark .updates .badge,
-html.inat-dark .activity .badge-dot,
-html.inat-dark .event-marker {
-    background: #1e2127 !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-    box-shadow: 0 0 0 2px var(--bg);
-    /* keeps a halo against cards */
-}
-
-/* Thin separators between stacked items */
-html.inat-dark .timeline .item+.item,
-html.inat-dark .updates .item+.item {
-    border-top: 1px solid var(--border) !important;
-}
-
-/* Scientific names should follow link color for visibility */
-html.inat-dark .sciname {
-    color: var(--link) !important;
-}
-
 /* Timestamp spans should be bright enough in dark mode */
 html.inat-dark .time {
     color: #efefef !important;
@@ -1567,3 +1364,150 @@ html.inat-dark .time {
 html.inat-dark .media-body span i {
     color: #efefef !important;
 }
+
+/* --- 1.0.3: unreadable text, light surfaces and light/dark parity --- */
+
+/* Data Quality Assessment: iNat whites out every other row */
+html.inat-dark .QualityMetrics tbody tr:nth-child(2n+1) {
+    background: var(--card) !important;
+}
+
+html.inat-dark .QualityMetrics tbody tr:nth-child(2n) {
+    background: transparent !important;
+}
+
+/* iNat hardcodes black or #333 text on these; dark mode needs light text */
+html.inat-dark .ObservationModal .tools .btn-link,
+html.inat-dark .ObservationModal .column-header .header-text,
+html.inat-dark .ObservationModal .map-and-details .details > ul a,
+html.inat-dark .ObservationModal .map-and-details .details > ul .view-follow .permalink,
+html.inat-dark .ObservationModal .user-link,
+html.inat-dark .ObservationModal .Faves a,
+html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon,
+html.inat-dark .ObservationModal .SplitTaxon .secondary-name,
+html.inat-dark .ObservationModal h4,
+html.inat-dark .ObservationModal .inat-tabs li a,
+html.inat-dark .Suggestions .RecordChooserPopoverTrigger label,
+html.inat-dark .RecordChooserPopover.popover a,
+html.inat-dark .UsersPopoverOverlay a,
+html.inat-dark .ActivityItem .panel-title a.user,
+html.inat-dark .ActivityItem .panel-footer a,
+html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
+html.inat-dark .IdentifierStats .user a,
+html.inat-dark .ProgressChart .footer,
+html.inat-dark .ProgressChart .count,
+html.inat-dark .ConfirmModal .modal-body,
+html.inat-dark .FiltersButtonPopover .FiltersButtonContainer .feeds .btn,
+html.inat-dark a.place-link,
+html.inat-dark .bootstrap h5 > label,
+html.inat-dark .bootstrap fieldset > legend,
+html.inat-dark #projectnav .curatorlabel {
+    color: var(--text) !important;
+}
+
+html.inat-dark .ProgressChart .chart {
+    background: var(--border) !important;
+}
+
+/* Light page bands and boxes that were left white or pale */
+html.inat-dark #wrapper.bootstrap,
+html.inat-dark #wrapper > .bootstrap {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+html.inat-dark #projectnav.curatorbox,
+html.inat-dark #life-list.dynamic_life_list,
+html.inat-dark .list a.empty,
+html.inat-dark .chart-controls,
+html.inat-dark .Carousel > h2,
+html.inat-dark .gmapv3legend,
+html.inat-dark .gmapv3control,
+html.inat-dark #filters-footer,
+html.inat-dark #filters_button,
+html.inat-dark .ObservationModal .right-col,
+html.inat-dark .ObservationModal .inat-tabs,
+html.inat-dark .ObservationModal .tools,
+html.inat-dark .ac-select-thumb.input-group-addon {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark a.research_grade_notice {
+    background: var(--brand-green) !important;
+    color: var(--bg) !important;
+}
+
+html.inat-dark .btn-nostyle.linky {
+    color: var(--link) !important;
+}
+
+html.inat-dark .text-success {
+    color: #8bc34a !important;
+}
+
+html.inat-dark #charts .item-label {
+    color: var(--muted) !important;
+}
+
+html.inat-dark .observations.medium .observation {
+    background-color: transparent !important;
+}
+
+/* Inputs iNat renders without a type attribute (Explore species, filter tags) */
+html.inat-dark input:not([type]),
+html.inat-dark input.form-control {
+    background: #101215 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* Disabled buttons must still look disabled */
+html.inat-dark .btn:disabled,
+html.inat-dark .btn.disabled,
+html.inat-dark .btn[disabled],
+html.inat-dark .btn-primary:disabled,
+html.inat-dark .btn-primary.disabled,
+html.inat-dark .btn-success:disabled,
+html.inat-dark .btn-success.disabled {
+    background: var(--border) !important;
+    color: #6b7079 !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .navbar .navbar-nav > li.disabled > a,
+html.inat-dark .select.disabled label {
+    color: #6b7079 !important;
+}
+
+/* Wikipedia content on taxon About tabs */
+html.inat-dark .mw-parser-output .navbox,
+html.inat-dark .mw-parser-output .navbox td,
+html.inat-dark .mw-parser-output .navbox th,
+html.inat-dark .mw-parser-output .side-box,
+html.inat-dark .mw-parser-output .infobox {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html.inat-dark .mw-parser-output a.new {
+    color: #ff8a80 !important;
+}
+
+/* Parity: these are flat in light mode, so keep them flat in dark mode */
+html.inat-dark #ObservationShow .opposite_activity .panel,
+html.inat-dark #ObservationShow .opposite_activity table,
+html.inat-dark #ObservationShow .opposite_activity thead,
+html.inat-dark #ObservationShow .opposite_activity th,
+html.inat-dark .left-nav-item {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html.inat-dark #ObservationShow .opposite_activity .panel {
+    padding: 0 !important;
+}
+
