@@ -165,7 +165,9 @@ html.inat-dark .ui-widget-content.ac-menu {
     border: 1px solid var(--border) !important;
 }
 
-html.inat-dark .ui-autocomplete .ac-view {
+/* .searchclear is the clear (x) icon in Identify's place and taxon fields */
+html.inat-dark .ui-autocomplete .ac-view,
+html.inat-dark .searchclear {
     background: none !important;
 }
 
@@ -287,7 +289,8 @@ html.inat-dark .row .timeline-body .media:first-child {
     margin-top: 0 !important;
 }
 
-html.inat-dark table tr:hover {
+html.inat-dark table tr:hover,
+html.inat-dark #obs .observation:hover {
     background: #22262e;
 }
 
@@ -521,16 +524,25 @@ html.inat-dark canvas {
 /* Map UI (optional dark controls) */
 html.inat-dark .leaflet-control,
 html.inat-dark .mapboxgl-ctrl,
-html.inat-dark .leaflet-popup-content-wrapper {
+html.inat-dark .leaflet-popup-content-wrapper,
+html.inat-dark .gm-style .gm-style-iw-c {
     background: var(--card) !important;
     color: var(--text) !important;
     border: 1px solid var(--border) !important;
 }
 
 html.inat-dark .leaflet-bar a,
-html.inat-dark .leaflet-popup-tip {
+html.inat-dark .leaflet-popup-tip,
+html.inat-dark .gm-style .gm-style-iw-tc::after {
     background: var(--card) !important;
     color: var(--text) !important;
+}
+
+/* Google Maps paints the info window's scrollbar track white */
+html.inat-dark .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+html.inat-dark .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+html.inat-dark .gm-style .gm-style-iw-d::-webkit-scrollbar-corner {
+    background: var(--card) !important;
 }
 
 
@@ -718,8 +730,12 @@ html.inat-dark .btn-primary {
     border-color: transparent !important;
 }
 
+/* Bootstrap link buttons have no box in light mode */
 html.inat-dark .btn-link {
     color: var(--link) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Forms */
@@ -785,7 +801,8 @@ html.inat-dark th {
     background: #1b1e24 !important;
 }
 
-html.inat-dark tbody tr {
+html.inat-dark tbody tr,
+html.inat-dark .ObservationModal .Annotations td {
     border-color: var(--border) !important;
 }
 
@@ -1130,7 +1147,18 @@ html.inat-dark header#header,
 html.inat-dark .topnav {
     background: var(--card) !important;
     color: var(--text) !important;
+    border-color: var(--border) !important;
     border-bottom: 1px solid var(--border) !important;
+}
+
+/* The upload toolbar's light drop shadow reads as a glow on dark */
+html.inat-dark .nav_add_obs.navbar {
+    box-shadow: none !important;
+}
+
+/* ...and its divider before Select All is light grey */
+html.inat-dark .nav_add_obs li {
+    border-color: var(--border) !important;
 }
 
 /* Ensure container inside footer also matches */
@@ -1392,6 +1420,7 @@ html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon,
 html.inat-dark .ObservationModal .comname,
 html.inat-dark .ObservationModal h4,
 html.inat-dark .ObservationModal .inat-tabs li a,
+html.inat-dark .ObservationModal .inat-tabs li button,
 html.inat-dark .Suggestions .RecordChooserPopoverTrigger label,
 html.inat-dark .RecordChooserPopover.popover a,
 html.inat-dark .UsersPopoverOverlay a,
@@ -1428,11 +1457,12 @@ html.inat-dark .Carousel > h2,
 html.inat-dark .gmapv3legend,
 html.inat-dark .gmapv3control,
 html.inat-dark #filters-footer,
+html.inat-dark .FiltersButtonFooter,
 html.inat-dark #filters_button,
 html.inat-dark .ObservationModal .right-col,
 html.inat-dark .ObservationModal .inat-tabs,
 html.inat-dark .ObservationModal .tools,
-html.inat-dark .ac-select-thumb.input-group-addon {
+html.inat-dark .input-group-addon {
     background: var(--card) !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
@@ -1500,18 +1530,25 @@ html.inat-dark .mw-parser-output a.new {
     color: #ff8a80 !important;
 }
 
-/* Parity: these are flat in light mode, so keep them flat in dark mode */
+/* Parity: these are flat in light mode, so keep them flat in dark mode. The
+   Identify modal's Annotations tab has the same sections as the observation
+   page sidebar, so it matches it. */
 html.inat-dark #ObservationShow .opposite_activity .panel,
 html.inat-dark #ObservationShow .opposite_activity table,
 html.inat-dark #ObservationShow .opposite_activity thead,
 html.inat-dark #ObservationShow .opposite_activity th,
+html.inat-dark .ObservationModal .annotations-tab .panel,
+html.inat-dark .ObservationModal .annotations-tab table,
+html.inat-dark .ObservationModal .annotations-tab thead,
+html.inat-dark .ObservationModal .annotations-tab th,
 html.inat-dark .left-nav-item {
     background: transparent !important;
     border-color: transparent !important;
     box-shadow: none !important;
 }
 
-html.inat-dark #ObservationShow .opposite_activity .panel {
+html.inat-dark #ObservationShow .opposite_activity .panel,
+html.inat-dark .ObservationModal .annotations-tab .panel {
     padding: 0 !important;
 }
 
@@ -1523,6 +1560,7 @@ html.inat-dark .ObservationModal .sciname,
 html.inat-dark .ActivityItem .sciname,
 html.inat-dark .QualityMetrics .sciname,
 html.inat-dark .taxon > a > .sciname,
+html.inat-dark .split-taxon .sciname,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon .sciname,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon .rank {

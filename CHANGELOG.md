@@ -29,6 +29,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Identify's Annotations table no longer has a white first row, and taxon
   names in the taxonomy tree, home feed and Subscriptions use the link colour
   instead of near-black.
+- Identify: the Place field's clear icon has no white box, the observation
+  modal tabs are readable, the Annotations tab is flat like the observation
+  page, and the Filters popover footer, field icons and link buttons are dark.
+- Explore map view: the hovered list item and the map popup are dark, and
+  scientific names use the link colour.
+- Upload page: the toolbar no longer glows, and header borders are dark.
 - 20 selectors that were not scoped to dark mode no longer change light mode.
 
 ### Changed
