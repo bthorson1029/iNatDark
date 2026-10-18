@@ -1,60 +1,62 @@
-# iNaturalist Dark Mode Toggle (MV3)
+# Dark Mode for iNaturalist
 
+A Chrome and Firefox extension that adds a persistent, accessible dark mode to [iNaturalist](https://www.inaturalist.org/).
 
-A Chrome/Firefox MV3 extension that adds a persistent, accessible dark mode to iNaturalist, with a toolbar popup for System / Light / Dark and storage-backed preferences.
+<!-- Screenshot: add an image of a dark-mode page here, e.g. ![Observation page in dark mode](docs/screenshot.png) -->
 
+## Install
 
-## Install (Developer Mode)
-
-
-### Chrome / Edge (Chromium)
-1. Download this repo as a folder.
-2. Go to `chrome://extensions/`.
-3. Enable **Developer mode** (top right).
-4. Click **Load unpacked** and select the folder containing `manifest.json`.
-
-
-### Firefox (MV3)
-1. Go to `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on...** and select `manifest.json`.
-
-
-> Note: Firefox MV3 support is evolving; the extension is MV3-compatible and tested on recent versions. If needed, use `web-ext` for a smoother dev loop.
-
+- **Chrome / Edge:** [Chrome Web Store](https://chromewebstore.google.com/detail/dark-mode-for-inaturalist/ebjjolldjgccdfipdbdfmpcmienpfblg)
+- **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/dark-mode-for-inaturalist/)
 
 ## Usage
-- Visit `https://www.inaturalist.org/`.
-- Open the toolbar popup to choose **System**, **Light** or **Dark**. System follows your OS setting live.
 
+Open the toolbar popup and choose **System**, **Light** or **Dark**. System follows your OS setting live, and the choice applies to every open iNaturalist tab.
+
+## Privacy
+
+The extension collects no data. It stores only your theme choice, in your browser's synced extension storage. See [PRIVACY.md](PRIVACY.md).
+
+## Reporting a broken page
+
+iNaturalist changes its pages often, so some areas may need new rules. [Open an issue](https://github.com/bthorson1029/iNatDark/issues) with the page URL and a screenshot of the problem.
 
 ## Design & Accessibility
-- Theme is applied via `html.inat-dark` and CSS variables to reduce risk of site breakage.
-- Images, avatars, observation photos, and map tiles are never inverted.
-- Focus states are visible; respects `prefers-reduced-motion`.
-- Targets WCAG AA contrast with calibrated colors.
 
+- The theme is a single `html.inat-dark` class plus CSS variables, which keeps the risk of breaking the site low.
+- Images, avatars, observation photos, and map tiles are never inverted.
+- Focus states are visible, and `prefers-reduced-motion` is respected.
+- Colors target WCAG AA contrast.
 
 ## How It Works
-- **FOUC prevention**: the content script hides the page at `document_start` until the saved preference is read, with a one-second failsafe.
-- **Persistence**: the popup stores `inatDarkPref` (`dark`, `light`, or unset for System) in `storage.sync`; every open tab picks up changes through `storage.onChanged`.
-- **Dynamic content**: the theme is a single `html.inat-dark` class, which survives in-page navigation, so no re-application is needed.
 
+- **No flash of light theme:** the content script hides the page at `document_start` until the saved preference is read, with a one-second failsafe.
+- **Persistence:** the popup stores `inatDarkPref` (`dark`, `light`, or unset for System) in `storage.sync`; every open tab picks up changes through `storage.onChanged`.
+- **Dynamic content:** the theme is one class on `<html>`, which survives in-page navigation, so nothing needs re-applying.
 
 ## Development
-- Edit CSS variables in `content/content.css` for quick visual tuning.
-- Add specific component fixes under the `html.inat-dark` scope only.
+
+Load the extension from source:
+
+- **Chrome / Edge:** go to `chrome://extensions/`, turn on **Developer mode**, click **Load unpacked** and select the folder containing `manifest.json`. After editing files, click the reload icon on the extension's card, then refresh iNaturalist.
+- **Firefox:** go to `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on...** and select `manifest.json`.
+
+Guidelines:
+
+- Scope every rule under `html.inat-dark`, so light mode is never affected.
 - Change colors, not layout: check each fix against light mode so spacing and states match.
+- When an area breaks, extend the existing rule for that kind of surface or text before adding a new one.
 - Avoid blanket `filter: invert()` techniques.
 
+## Releasing
 
-## Known Limitations
-- If iNat ships structural CSS changes, some selectors may need updates.
-
-
-## Packaging
-- **Chrome**: Use the Extensions page > Pack extension, or `npm i -g chrome-extension-cli` equivalents.
-- **Firefox**: Use `web-ext build` to produce a signed bundle for AMO.
-
+1. Bump `version` in `manifest.json` and date the entry in [CHANGELOG.md](CHANGELOG.md).
+2. Commit to `main` and tag it `vX.Y.Z`.
+3. Build two zips of the tagged files into `dist/` (ignored by git), with `manifest.json` at the zip root:
+   - `iNatDark-chrome-X.Y.Z.zip`: every tracked file except `.gitignore`.
+   - `dark_mode_for_inaturalist-X.Y.Z.zip`: the same, minus `README.md` and `CHANGELOG.md`.
+4. Upload the Chrome zip in the Chrome Web Store developer dashboard, and the Firefox zip as a new version on AMO. AMO signs it after review.
 
 ## License
-MIT
+
+MIT. See [LICENSE](LICENSE).
