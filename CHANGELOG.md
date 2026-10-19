@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- Identify modal: the "Add an Identification" and "Add a Comment" headings are
+  readable, and comments look like identifications, with no extra box, no dark
+  inner panel and a gray timestamp.
+- Scientific names in the taxon page and observation page titles use the link
+  color instead of black.
+
 ## [1.0.3] - 2026-10-17
 
 ### Fixed
@@ -101,6 +110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dark logo swap; images, avatars, observation photos, and map tiles are never
   inverted.
 
+[Unreleased]: https://github.com/bthorson1029/iNatDark/compare/v1.0.3...HEAD
 [1.0.3]: https://github.com/bthorson1029/iNatDark/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/bthorson1029/iNatDark/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/bthorson1029/iNatDark/compare/v1.0.0...v1.0.1

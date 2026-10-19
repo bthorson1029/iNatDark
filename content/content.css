@@ -302,7 +302,8 @@ html.inat-dark ul.timeline_observation > li:last-child > .timeline-panel > .time
     padding: 1rem !important;
 }
 
-html.inat-dark .timeline>li>.timeline-panel>.timeline-body span.identifications {
+html.inat-dark .timeline>li>.timeline-panel>.timeline-body span.identifications,
+html.inat-dark .ActivityItem time.time a {
     color: var(--muted) !important;
 }
 
@@ -336,17 +337,21 @@ html.inat-dark .activity .improving.panel.panel-default,
 html.inat-dark .activity .comment.by-someone-else,
 html.inat-dark .activity .undefined.panel.panel-default,
 html.inat-dark .activity .comment.by-current-user,
+html.inat-dark .ObservationModal .ActivityItem.comment,
 html.inat-dark .taxon_change ul.change_taxon,
 html.inat-dark .taxon_change ul.change_taxon li {
     background: rgba(0, 0, 0, 0) !important;
 }
 
+/* The Identify modal's comments carry .comment on the item itself, outside .activity */
 html.inat-dark .activity .comment.by-someone-else,
-html.inat-dark .activity .comment.by-current-user {
+html.inat-dark .activity .comment.by-current-user,
+html.inat-dark .ObservationModal .ActivityItem.comment {
     border: none !important;
+    box-shadow: none !important;
 }
 
-html.inat-dark .activity .UserText .content {
+html.inat-dark .UserText .content {
     background: none !important;
 }
 
@@ -1419,6 +1424,8 @@ html.inat-dark .ObservationModal .Faves a,
 html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon,
 html.inat-dark .ObservationModal .comname,
 html.inat-dark .ObservationModal h4,
+html.inat-dark .ObservationModal .IdentificationForm h3,
+html.inat-dark .ObservationModal .CommentForm h3,
 html.inat-dark .ObservationModal .inat-tabs li a,
 html.inat-dark .ObservationModal .inat-tabs li button,
 html.inat-dark .Suggestions .RecordChooserPopoverTrigger label,
@@ -1561,6 +1568,8 @@ html.inat-dark .ActivityItem .sciname,
 html.inat-dark .QualityMetrics .sciname,
 html.inat-dark .taxon > a > .sciname,
 html.inat-dark .split-taxon .sciname,
+html.inat-dark #TaxonHeader .sciname,
+html.inat-dark .ObservationTitle .sciname,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon .sciname,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon .rank {
