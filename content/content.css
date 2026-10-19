@@ -24,7 +24,8 @@ html.inat-dark #ObservationShow .data_quality_assessment,
 html.inat-dark #ObservationShow .more_from,
 html.inat-dark #wrapper > .container,
 html.inat-dark #wrapper > .container .col-sm-8,
-html.inat-dark #app {
+html.inat-dark #app,
+html.inat-dark #ProjectsShow .Content {
     background: var(--bg) !important;
     color: var(--text) !important;
 }
@@ -45,8 +46,9 @@ html.inat-dark #inat-universal-autocomplete .ui-autocomplete .ac .ac-thumb img {
     border-radius: 0 !important;
 }
 
-/* Add obs button */
-html.inat-dark #wrapper a#obsbutton.btn.btn-default {
+/* Spacing above the Add Observations button, in both themes (deliberately not
+   scoped to html.inat-dark) */
+#wrapper a#obsbutton.btn.btn-default {
     margin-top: 1rem !important;
 }
 
@@ -57,7 +59,6 @@ html.inat-dark li.rc-pagination-item-active a {
 html.inat-dark #wrapper ul.leftmenu li a.active {
     background: var(--brand-green) !important;
     color: var(--bg) !important;
-    font-weight: 700 !important;
 }
 
 html.inat-dark .mainrow,
@@ -84,7 +85,7 @@ html.inat-dark textarea,
 html.inat-dark .MoreFromUser .obs {
     background: var(--card);
     color: var(--text);
-    border: 1px solid var(--border);
+    border-color: var(--border);
 }
 
 html.inat-dark .btn-primary,
@@ -96,7 +97,7 @@ html.inat-dark .panel a.btn.btn-primary {
 }
 
 html.inat-dark #subview-controls .btn.btn-default.active {
-    border-bottom: var(--brand-green) 1px solid !important;
+    border-bottom-color: var(--brand-green) !important;
 }
 html.inat-dark #subview-controls .btn.btn-default.active > span.glyphicon {
     color: var(--brand-green) !important;
@@ -147,7 +148,7 @@ html.inat-dark .ui-autocomplete .ui-state-focus a.ac-view {
 
 html.inat-dark .ui-autocomplete li.ac-result + li.ac-result,
 html.inat-dark .ui-autocomplete .nearby-toggle {
-    border-top: 1px solid var(--border) !important;
+    border-top-color: var(--border) !important;
 }
 
 
@@ -162,7 +163,7 @@ html.inat-dark .ui-widget-content.ui-autocomplete .nearby-toggle button {
 }
 
 html.inat-dark .ui-widget-content.ac-menu {
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* .searchclear is the clear (x) icon in Identify's place and taxon fields */
@@ -184,13 +185,13 @@ html.inat-dark #subscriptions .list-group a {
 
 html.inat-dark .bootstrap .pagination > li:first-child > a {
     background-color: var(--card) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .pagination a {
     color: var(--text) !important;
     background: var(--card);
-    border: 1px solid var(--border);
+    border-color: var(--border);
 }
 
 html.inat-dark .bootstrap .pagination > .active > a {
@@ -205,13 +206,13 @@ html.inat-dark .bootstrap .pagination > .active > a:hover {
 }
 html.inat-dark .bootstrap .pagination > li > a:hover {
     background-color: var(--card) !important;
-    border: 1px solid var(--brand-green) !important;
+    border-color: var(--brand-green) !important;
 }
 
 html.inat-dark .pagination em.current {
     color: #74ac00 !important;
     background: var(--card);
-    border: 1px solid var(--border);
+    border-color: var(--border);
 }
 
 html.inat-dark .col-md-3.col-sm-3 .media,
@@ -264,7 +265,7 @@ html.inat-dark table {
 }
 
 html.inat-dark .bootstrap .table > tbody > tr > td {
-    border: none !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .sortable-table td.sorting {
@@ -275,20 +276,6 @@ html.inat-dark .split-taxon .noname.display-name {
     color: var(--muted) !important;
 }
 
-html.inat-dark .timeline .row .media {
-    padding: 1rem !important;
-}
-html.inat-dark .timeline .row .media:nth-child(odd) {
-    background: var(--card) !important;
-}
-html.inat-dark .timeline .row .media:first-child {
-    margin-top: 1rem !important;
-}
-
-html.inat-dark .row .timeline-body .media:first-child {
-    margin-top: 0 !important;
-}
-
 html.inat-dark table tr:hover,
 html.inat-dark #obs .observation:hover {
     background: #22262e;
@@ -296,10 +283,6 @@ html.inat-dark #obs .observation:hover {
 
 html.inat-dark #projectnav li:hover {
     background-color: var(--card) !important;
-}
-
-html.inat-dark ul.timeline_observation > li:last-child > .timeline-panel > .timeline-body {
-    padding: 1rem !important;
 }
 
 html.inat-dark .timeline>li>.timeline-panel>.timeline-body span.identifications,
@@ -364,11 +347,17 @@ html.inat-dark .Map {
     border-color: var(--border) !important;
 }
 
-html.inat-dark #obs-container, 
-html.inat-dark #obs-container .container, 
-html.inat-dark #map, 
-html.inat-dark #observations-map {
+/* Taller Explore map view, in both themes: the only rule that also applies in
+   light mode, so it is deliberately not scoped to html.inat-dark */
+#observations-map,
+#observations-map #obs-container,
+#observations-map #obs-container .container,
+#observations-map #map {
     height: calc(100vh - 15rem) !important;
+}
+
+#observations-map #obs {
+    height: calc(100vh - 18rem) !important;
 }
 
 html.inat-dark #obs-container .taxon.has-com-name .secondary-name {
@@ -377,18 +366,17 @@ html.inat-dark #obs-container .taxon.has-com-name .secondary-name {
 
 html.inat-dark #obs {
     background-color: var(--bg) !important;
-    height: calc(100vh - 18rem) !important;
 }
 
 
 html.inat-dark #ObservationShow .top_row .info_column .user_info,
 html.inat-dark .TaxonomicBranch .taxonomy li.tabular.has-children li.current.has-children .row-content>* {
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
 }
 
 html.inat-dark #ObservationShow .top_row .info_column,
 html.inat-dark #ObservationShow .top_row .photos_column {
-    border: none !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .QualityMetrics>.panel.panel-default {
@@ -398,20 +386,15 @@ html.inat-dark .QualityMetrics>.panel.panel-default {
 
 html.inat-dark #ObservationShow .data_quality_assessment,
 html.inat-dark #ObservationShow .more_from {
-    border-top: 1px solid var(--border) !important;
+    border-top-color: var(--border) !important;
 }
 
 html.inat-dark #inatnotice {
     background-color: var(--bg) !important;
 }
 
-html.inat-dark #main-tabs.nav-tabs>li.curation-tab {
-    align-self: flex-start !important;
-    margin-top: -0.25rem !important;
-}
-
 html.inat-dark .timeline>li>.timeline-panel {
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .timeline>li>.timeline-panel::before {
@@ -448,14 +431,6 @@ html.inat-dark .timeline>li>.timeline-panel::after {
     border-right-width: 14px;
     left: -14px;
     right: auto;
-}
-
-html.inat-dark ul.timeline_observation > li > .timeline-panel > .timeline-heading {
-    padding-right: 1rem !important;
-}
-
-html.inat-dark .timeline>li>.timeline-panel>.timeline-body .media-body > ul > li:last-child {
-    margin-left: -3px !important;
 }
 
 
@@ -500,7 +475,7 @@ html.inat-dark .LeaderItem .value {
 html.inat-dark pre,
 html.inat-dark code {
     background: #0e0f12;
-    border: 1px solid var(--border);
+    border-color: var(--border);
     color: #d1d5db;
 }
 
@@ -533,7 +508,7 @@ html.inat-dark .leaflet-popup-content-wrapper,
 html.inat-dark .gm-style .gm-style-iw-c {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .leaflet-bar a,
@@ -719,7 +694,7 @@ html.inat-dark .btn-secondary {
 }
 
 html.inat-dark .btn-default.dashboard_tab.active {
-    border-bottom: var(--brand-green) 1px solid !important;
+    border-bottom-color: var(--brand-green) !important;
 }
 
 html.inat-dark .btn-default.dashboard_tab:focus,
@@ -753,7 +728,7 @@ html.inat-dark textarea,
 html.inat-dark select {
     background: #101215 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark input::placeholder,
@@ -769,7 +744,7 @@ html.inat-dark .tooltip-inner,
 html.inat-dark .toast {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .tooltip .tooltip-arrow {
@@ -780,7 +755,7 @@ html.inat-dark .tooltip .tooltip-arrow {
 html.inat-dark .modal-content {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .modal-header,
@@ -806,8 +781,47 @@ html.inat-dark th {
     background: #1b1e24 !important;
 }
 
+/* Light gray dividers and frames; widths stay as iNat sets them */
 html.inat-dark tbody tr,
-html.inat-dark .ObservationModal .Annotations td {
+html.inat-dark th,
+html.inat-dark .ObservationModal .Annotations td,
+html.inat-dark .QualityMetrics td,
+html.inat-dark .collapsible-section,
+html.inat-dark .ActivityItemMenu,
+html.inat-dark .panel-title > .menu,
+html.inat-dark .suggestion-row,
+html.inat-dark .TaxonMap,
+html.inat-dark img.taxon-image,
+html.inat-dark img.img-thumbnail,
+html.inat-dark img.img-rounded,
+html.inat-dark .img-wrapper.no-photo,
+html.inat-dark .photo-count,
+html.inat-dark .rc-pagination-item a,
+html.inat-dark .rc-pagination-item-link,
+html.inat-dark .ProgressChart,
+html.inat-dark .page-header,
+html.inat-dark .timeline-title .subscriptionsettings,
+html.inat-dark .date_observed,
+html.inat-dark .ids_by_others,
+html.inat-dark #obs .media-body,
+html.inat-dark #stats-container .stat,
+html.inat-dark .filters-center-col,
+html.inat-dark .Charts .tab-content,
+html.inat-dark #main-tabs-content,
+html.inat-dark .establishment-means div,
+html.inat-dark .tab-section > div,
+html.inat-dark .mw-heading h2,
+html.inat-dark .mw-heading h3,
+html.inat-dark .observations .attribute,
+html.inat-dark .headerrow .header,
+html.inat-dark .StatsHeader,
+html.inat-dark .stats-tab .btn-white,
+html.inat-dark .LeaderboardPanel,
+html.inat-dark .vl,
+html.inat-dark #identifications .row,
+html.inat-dark .media-left .inner > a,
+html.inat-dark .squareIcon img,
+html.inat-dark #comment-id-tabs .tab-content {
     border-color: var(--border) !important;
 }
 
@@ -832,13 +846,13 @@ html.inat-dark .notice,
 html.inat-dark .callout {
     background: #1a1c21 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* HR separators */
 html.inat-dark hr {
     border: 0;
-    border-top: 1px solid var(--border) !important;
+    border-top-color: var(--border) !important;
 }
 
 /* Forum sidebar widgets */
@@ -881,7 +895,7 @@ html.inat-dark .thread,
 html.inat-dark .CommunityIdentification .info {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     border-radius: 6px;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
 }
@@ -889,7 +903,7 @@ html.inat-dark .CommunityIdentification .info {
 html.inat-dark #ObservationShow .top_row .info_column {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
 }
 
@@ -913,15 +927,11 @@ html.inat-dark .Activity .activity:before {
 }
 
 html.inat-dark .Activity .UserImage {
-    border: 4px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark #ObservationShow .Activity .ActivityItemMenu {
-    border: none !important;
-}
-
-html.inat-dark #ObservationShow #comment-id-tabs .nav.nav-tabs {
-    display: block !important;
+    border-color: var(--border) !important;
 }
 
 
@@ -930,7 +940,7 @@ html.inat-dark .panel-heading,
 html.inat-dark .card-header {
     background: #1a1c21 !important;
     color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
 }
 
 html.inat-dark .ActivityItem .panel-body .contents {
@@ -938,18 +948,14 @@ html.inat-dark .ActivityItem .panel-body .contents {
 }
 
 html.inat-dark #ObservationShow .comment_id_panel {
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .panel-footer,
 html.inat-dark .card-footer {
     background: #1a1c21 !important;
     color: var(--text) !important;
-    border-top: 1px solid var(--border) !important;
-}
-
-html.inat-dark .btn-primary {
-    font-weight: 700 !important;
+    border-top-color: var(--border) !important;
 }
 
 html.inat-dark .TaxonThumbnail .taxon .secondary-name,
@@ -987,13 +993,16 @@ html.inat-dark .TaxonThumbnail .badge.with-tip > a {
     color: var(--card) !important;
 } */
 
-html.inat-dark .quality_grade.research {
+/* Dark text on iNat's colored badges and highlights, as in light mode */
+html.inat-dark .quality_grade.research,
+html.inat-dark a.needs_id_notice,
+html.inat-dark mark,
+html.inat-dark #footer a.btn-primary {
     color: var(--bg) !important;
-    font-weight: 700 !important;
 }
 
 html.inat-dark .CommunityIdentification .action {
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark #ObservationShow a.secondary-name {
@@ -1026,8 +1035,6 @@ html.inat-dark .pill,
 html.inat-dark .filter-pill,
 html.inat-dark .badge,
 html.inat-dark .label {
-    /* padding: 6px 10px !important; */
-    line-height: 1.2 !important;
     border-color: var(--border) !important;
 }
 
@@ -1045,10 +1052,6 @@ html.inat-dark .TaxonPageTabs #main-tabs {
     background-color: var(--bg) !important;
 }
 
-html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
-    padding: 20px 30px 16px !important;
-}
-
 html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a,
 html.inat-dark .TaxonPageTabs .nav-tabs>li>a:hover,
 html.inat-dark .TaxonPageTabs .nav-tabs>li>a:focus,
@@ -1061,26 +1064,15 @@ html.inat-dark .nav-tabs.user-subnav>li.active>a,
 html.inat-dark .nav-tabs.user-subnav>li>a:hover,
 html.inat-dark #ObservationShow .nav-tabs>li.active>a,
 html.inat-dark #ObservationShow .nav-tabs>li>a:hover {
-    border-bottom: 3px solid #74ac00 !important;
+    border-bottom-color: #74ac00 !important;
 }
 
 html.inat-dark .nav.nav-tabs {
-    display: flex !important;
     background-color: rgba(0, 0, 0, 0) !important;
-    align-items: flex-end !important;
 }
 
 html.inat-dark span.userlink a {
     color: var(--text) !important;
-}
-
-html.inat-dark .nav.nav-tabs.user-subnav>li.active,
-html.inat-dark .nav.nav-tabs.user-subnav>li,
-html.inat-dark .TaxonPageTabs .nav-tabs>li.active>a,
-html.inat-dark .TaxonPageTabs .nav-tabs>li>a {
-    height: 100% !important;
-    align-items: stretch !important;
-    border: none !important;
 }
 
 html.inat-dark #charts.Charts>ul>li>a:focus,
@@ -1111,7 +1103,7 @@ html.inat-dark textarea,
 html.inat-dark select {
     background: #101215 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark input::placeholder,
@@ -1125,20 +1117,10 @@ html.inat-dark .popover,
 html.inat-dark .tooltip-inner {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* K. Prevent layout shift: borders match original 1px thickness */
-html.inat-dark .panel,
-html.inat-dark .card,
-html.inat-dark .dropdown-menu,
-html.inat-dark .modal-content,
-html.inat-dark .popover,
-html.inat-dark table,
-html.inat-dark .list-group-item {
-    border-width: 1px !important;
-}
-
 /* --- DARK PATCH v3: top nav + timeline + thumbnails --- */
 
 /* 1) Top navigation/header bar */
@@ -1153,7 +1135,7 @@ html.inat-dark .topnav {
     background: var(--card) !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
 }
 
 /* The upload toolbar's light drop shadow reads as a glow on dark */
@@ -1171,7 +1153,7 @@ html.inat-dark #footer,
 html.inat-dark #footer>.container {
     background: var(--card) !important;
     color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
 }
 
 html.inat-dark #footer a {
@@ -1184,7 +1166,7 @@ html.inat-dark .navbar .form-control,
 html.inat-dark header.site-header input[type="search"] {
     background: #101215 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark .navbar input::placeholder,
@@ -1205,7 +1187,7 @@ html.inat-dark header.site-header a:hover {
 
 html.inat-dark .navbar .dropdown-menu {
     background: var(--card) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* 2) Timeline items */
@@ -1215,7 +1197,7 @@ html.inat-dark .updates .heading,
 html.inat-dark .activity .heading {
     background: var(--card)!important;
     color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
     /* padding: var(--space-3) var(--space-4) !important; */
 }
 
@@ -1225,7 +1207,7 @@ html.inat-dark .updates .item,
 html.inat-dark .activity .item {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     border-radius: 6px;
 }
 
@@ -1238,7 +1220,7 @@ html.inat-dark .activity {
 html.inat-dark .thumbnail {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     border-radius: 6px;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
 }
@@ -1263,7 +1245,7 @@ html.inat-dark .navbar .badge,
 html.inat-dark .navbar .label {
     background: #1e2127 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* --- DARK PATCH v4: #header + timeline borders & spine --- */
@@ -1273,7 +1255,7 @@ html.inat-dark #header,
 html.inat-dark header#header {
     background: var(--card) !important;
     color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
 }
 
 html.inat-dark #header a {
@@ -1289,7 +1271,7 @@ html.inat-dark #header input[type="search"],
 html.inat-dark #header .form-control {
     background: #101215 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 html.inat-dark #header input::placeholder {
@@ -1300,7 +1282,7 @@ html.inat-dark #header input::placeholder {
 html.inat-dark #header .dropdown-menu {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* 2) Timeline containers & item borders */
@@ -1321,7 +1303,7 @@ html.inat-dark .updates .item,
 html.inat-dark .activity .item {
     background: var(--card) !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     border-radius: 6px;
 }
 
@@ -1330,7 +1312,7 @@ html.inat-dark .Timeline-heading,
 html.inat-dark .updates .heading {
     background: #1a1c21 !important;
     color: var(--text) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-bottom-color: var(--border) !important;
     /* padding: var(--space-3) var(--space-4) !important; */
 }
 
@@ -1350,12 +1332,10 @@ html.inat-dark .Timeline::before {
 
 html.inat-dark .observations.mini .bubbles a {
     color: var(--bg) !important;
-    font-weight: 700 !important;
 }
 
 html.inat-dark .observations.mini .observation {
-    border-bottom: 1px solid var(--border) !important;
-    padding-bottom: 1rem !important;
+    border-bottom-color: var(--border) !important;
 }
 
 html.inat-dark .observations.mini a.research_grade_notice {
@@ -1380,7 +1360,7 @@ html.inat-dark .activity .badge-dot,
 html.inat-dark .event-marker {
     background: #1e2127 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
     box-shadow: 0 0 0 2px var(--bg);
     /* keeps a halo against cards */
 }
@@ -1388,7 +1368,7 @@ html.inat-dark .event-marker {
 /* Thin separators between stacked items */
 html.inat-dark .timeline .item+.item,
 html.inat-dark .updates .item+.item {
-    border-top: 1px solid var(--border) !important;
+    border-top-color: var(--border) !important;
 }
 
 /* Timestamp spans should be bright enough in dark mode */
@@ -1457,6 +1437,12 @@ html.inat-dark #wrapper > .bootstrap {
 }
 
 html.inat-dark #projectnav.curatorbox,
+html.inat-dark .LeaderboardPanel,
+html.inat-dark .explore-details-popover .menu,
+html.inat-dark .bigun,
+html.inat-dark [id$="_AnnotationChart_borderDiv"],
+html.inat-dark .gallerybox .thumb,
+html.inat-dark .mw-parser-output .mod-gallery .whitebg .thumb,
 html.inat-dark #life-list.dynamic_life_list,
 html.inat-dark .list a.empty,
 html.inat-dark .chart-controls,
@@ -1501,7 +1487,7 @@ html.inat-dark input:not([type]),
 html.inat-dark input.form-control {
     background: #101215 !important;
     color: var(--text) !important;
-    border: 1px solid var(--border) !important;
+    border-color: var(--border) !important;
 }
 
 /* Disabled buttons must still look disabled */
@@ -1568,6 +1554,7 @@ html.inat-dark .ActivityItem .sciname,
 html.inat-dark .QualityMetrics .sciname,
 html.inat-dark .taxon > a > .sciname,
 html.inat-dark .split-taxon .sciname,
+html.inat-dark .SplitTaxon .sciname,
 html.inat-dark #TaxonHeader .sciname,
 html.inat-dark .ObservationTitle .sciname,
 html.inat-dark .TaxonomicBranch .taxonomy .taxon a,
@@ -1579,6 +1566,11 @@ html.inat-dark .TaxonomicBranch .taxonomy .taxon .rank {
 /* Place subscriptions show the taxon as a gray aside, as in light mode */
 html.inat-dark #subscriptions .list-group .othernames .sciname {
     color: var(--muted) !important;
+}
+
+/* Project observation cards caption names on a dark gray band, light as in light mode */
+html.inat-dark .ObservationsGrid .caption .sciname {
+    color: var(--text) !important;
 }
 
 /* Taxonomy tree: the common name in parentheses stays text-colored */

@@ -32,7 +32,6 @@
                 "content/content.js"
             ],
             "css": [
-                "content/reset.css",
                 "content/content.css"
             ]
         }

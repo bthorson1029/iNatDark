@@ -13,6 +13,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   inner panel and a gray timestamp.
 - Scientific names in the taxon page and observation page titles use the link
   color instead of black.
+- Dark mode no longer changes layout anywhere: borders keep iNaturalist's own
+  widths, buttons and badges keep their weight and line height, tabs keep their
+  shape, and the global box-sizing reset is gone, so every audited page is the
+  same height in both themes.
+- Project pages: the content area and leaderboards are dark and readable.
+- Readable in dark mode: search-term highlights, "Needs ID" badges, the footer
+  Donate button, calendar day tiles, Site Stats chart frames, Explore species
+  menus, Wikipedia gallery boxes, and scientific names in Community Taxon, map
+  legends and project leaderboards.
+- Light gray dividers and image frames across Explore, Identify, observation,
+  taxon, project, search and account pages now use the dark border color.
+
+### Changed
+- The taller Explore map view now applies in light mode too, so the map is the
+  same size in both themes.
+- The spacing above the Add Observations button on the home page now applies
+  in light mode too.
 
 ## [1.0.3] - 2026-10-17
 
