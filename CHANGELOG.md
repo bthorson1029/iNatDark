@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   legends and project leaderboards.
 - Light gray dividers and image frames across Explore, Identify, observation,
   taxon, project, search and account pages now use the dark border color.
+- Edit Observations rows and home timeline badges no longer turn light gray.
 
 ### Changed
 - The taller Explore map view now applies in light mode too, so the map is the

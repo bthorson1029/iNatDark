@@ -277,7 +277,8 @@ html.inat-dark .split-taxon .noname.display-name {
 }
 
 html.inat-dark table tr:hover,
-html.inat-dark #obs .observation:hover {
+html.inat-dark #obs .observation:hover,
+html.inat-dark .observations.table .observation:hover {
     background: #22262e;
 }
 
@@ -800,7 +801,7 @@ html.inat-dark .rc-pagination-item a,
 html.inat-dark .rc-pagination-item-link,
 html.inat-dark .ProgressChart,
 html.inat-dark .page-header,
-html.inat-dark .timeline-title .subscriptionsettings,
+html.inat-dark .timeline-title .update-settings,
 html.inat-dark .date_observed,
 html.inat-dark .ids_by_others,
 html.inat-dark #obs .media-body,
@@ -851,7 +852,6 @@ html.inat-dark .callout {
 
 /* HR separators */
 html.inat-dark hr {
-    border: 0;
     border-top-color: var(--border) !important;
 }
 
@@ -1438,6 +1438,7 @@ html.inat-dark #wrapper > .bootstrap {
 
 html.inat-dark #projectnav.curatorbox,
 html.inat-dark .LeaderboardPanel,
+html.inat-dark .timeline .sub-badge,
 html.inat-dark .explore-details-popover .menu,
 html.inat-dark .bigun,
 html.inat-dark [id$="_AnnotationChart_borderDiv"],
