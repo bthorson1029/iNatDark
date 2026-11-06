@@ -25,7 +25,9 @@ html.inat-dark #ObservationShow .more_from,
 html.inat-dark #wrapper > .container,
 html.inat-dark #wrapper > .container .col-sm-8,
 html.inat-dark #app,
-html.inat-dark #ProjectsShow .Content {
+html.inat-dark #ProjectsShow .Content,
+html.inat-dark .profile-container,
+html.inat-dark #hero-container {
     background: var(--bg) !important;
     color: var(--text) !important;
 }
@@ -820,6 +822,7 @@ html.inat-dark .stats-tab .btn-white,
 html.inat-dark .LeaderboardPanel,
 html.inat-dark .vl,
 html.inat-dark #identifications .row,
+html.inat-dark #hero-container .hero,
 html.inat-dark .media-left .inner > a,
 html.inat-dark .squareIcon img,
 html.inat-dark #comment-id-tabs .tab-content {
@@ -1404,6 +1407,9 @@ html.inat-dark .ObservationModal .Faves a,
 html.inat-dark .ObservationModal .ActivityItem i.taxon-image.icon,
 html.inat-dark .ObservationModal .comname,
 html.inat-dark .ObservationModal h4,
+html.inat-dark .ProjectsMenu ul a,
+html.inat-dark .split-taxon a.display-name.comname,
+html.inat-dark #new_user .remember-forgot label,
 html.inat-dark .ObservationModal .IdentificationForm h3,
 html.inat-dark .ObservationModal .CommentForm h3,
 html.inat-dark .ObservationModal .inat-tabs li a,
@@ -1437,6 +1443,10 @@ html.inat-dark #wrapper > .bootstrap {
 }
 
 html.inat-dark #projectnav.curatorbox,
+html.inat-dark .ProjectsMenu summary,
+html.inat-dark .ProjectsMenu ul,
+html.inat-dark .profile-container [class^="toggle--"],
+html.inat-dark .profile-container [class^="drawer--"],
 html.inat-dark .LeaderboardPanel,
 html.inat-dark .timeline .sub-badge,
 html.inat-dark .explore-details-popover .menu,
